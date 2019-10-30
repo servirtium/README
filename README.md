@@ -24,7 +24,7 @@ That's the whole point of this format that's human inspectable in raw form and t
 
 ### Multiple Interactions Catered For
 
-Each interaction is denoted via a **Level 2 Markdown Heading**. e.g. "## Interaction N: <METHOD> <PATH-FROM-ROOT>"
+Each interaction is denoted via a **Level 2 Markdown Heading**. e.g. `## Interaction N: <METHOD> <PATH-FROM-ROOT>`
 
 N starts as 0, and goes up depending on how many interactions there were in the conversation.
 
@@ -36,8 +36,8 @@ N starts as 0, and goes up depending on how many interactions there were in the 
 
 Each interaction has four sections denoted by a **Level 3 Markdown headers*
 
-1. The request headers going from the client to the HTTP server, denoted like so "### Request headers recorded for playback:"
-2. The request body going from the client to the HTTP server (if applicable - GET does not use this)
+1. The request headers going from the client to the HTTP server, denoted like so `### Request headers recorded for playback:`
+2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (<MIME-TYPE>):`
 3. The response headers coming back from the HTTP server to the clent
 4. The response body coming back from the HTTP server to the clent (some HTTP methods do not use this)
 
