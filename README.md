@@ -18,4 +18,4 @@ Here's what GitHub (for one) renders that like:
 
 That's the whole point of this format that's human inspectable in raw form and that your code-portal renders in a pretty way too.
 
-(non-screenshot actual rendered file: [https://raw.githubusercontent.com/servirtium/README/master/example1.md](https://raw.githubusercontent.com/servirtium/README/master/example1.md))
+(non-screenshot actual rendered file: [https://github.com/servirtium/README/blob/master/example1.md](https://github.com/servirtium/README/blob/master/example1.md))
