@@ -10,8 +10,12 @@ Here's a screenshot of some raw markdown source:
 
 ![2019-10-30_0559](https://user-images.githubusercontent.com/82182/67832718-7092e380-fada-11e9-94a8-58dcc82810cb.png)
 
+(non-screenshot actual source: [https://raw.githubusercontent.com/servirtium/README/master/example1.md](https://raw.githubusercontent.com/servirtium/README/master/example1.md))
+
 Here's what GitHub (for one) renders that like:
 
 ![2019-10-30_0555](https://user-images.githubusercontent.com/82182/67832562-f2ced800-fad9-11e9-9bbf-8a366ad7c938.png)
 
 That's the whole point of this format that's human inspectable in raw form and that your code-portal renders in a pretty way too.
+
+(non-screenshot actual rendered file: [https://raw.githubusercontent.com/servirtium/README/master/example1.md](https://raw.githubusercontent.com/servirtium/README/master/example1.md))
