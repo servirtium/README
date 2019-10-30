@@ -67,3 +67,8 @@ could be that the playback technology is on a different thread to the test execu
 6. Node.JS - People wishing to lead development sought.
 
 We're also looking to existing Service Virtualiztion frameworks/libs to support (and help refine) the same Markdown format.
+
+# Demo Projects
+
+1. Java - [demo-java-climate-data-tck](https://github.com/servirtium/demo-java-climate-data-tck)
+2. Python - [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck)
