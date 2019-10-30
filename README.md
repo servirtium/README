@@ -41,7 +41,7 @@ Each interaction has four sections denoted by a **Level 3 Markdown headers*
 3. The response headers coming back from the HTTP server to the clent, denoted like so `### Response headers recorded for playback:`
 4. The response body coming back from the HTTP server to the clent (some HTTP methods do not use this), denoted like so `### Response body recorded for playback (<STATUS-CODE>: <MINE-TYPE>):`
 
-Within each of those there is a single Markdown code block with the details of each.  The lines in that 
+Within each of those there is a single Markdown code block (three backtick sequences) with the details of each.  The lines in that 
 block may be reformatted depending on the settings of the recorder. If binary, then there is a Base64 
 sequence instead (admittedly not so pretty on the eye).
 
