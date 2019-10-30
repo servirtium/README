@@ -1,6 +1,6 @@
-# What is Servirtium
+# What is Servirtium?
 
-Servirtium is an attempt to evolve a standard for recorded HTTP conversations is Markdown to test-automation purposes. Conversations 
+Servirtium is an attempt to evolve **a standard for recorded HTTP conversations is Markdown** to test-automation purposes. Conversations 
 would be replayable from the same Markdown format. Multiple language implementations would be able work with the same Markdown 
 standard, and it would be possible to record a HTTP conversation with (say) a Ruby library using Test::Unit and the play them back via a (say) Java library for JUnit/TestNG teams.  That would be for the situation where the Ruby team was publishing an API and bundled unit tests with it, but the consuming team was using Java instead of Ruby.
 
@@ -20,7 +20,7 @@ That's the whole point of this format that's human inspectable in raw form and t
 
 (non-screenshot actual rendered file: [https://github.com/servirtium/README/blob/master/example1.md](https://github.com/servirtium/README/blob/master/example1.md))
 
-## Syntax
+## Markdown Syntax Explained
 
 ### Multiple Interactions Catered For
 
@@ -57,3 +57,13 @@ the request headers or body are different in playback mode, the library should c
 being deliberate should be explicit somehow in the log of the unit test framework. This is easier said that done as it
 could be that the playback technology is on a different thread to the test executor.
 
+# Implementations
+
+1. Java - [Servirtium-Java](https://github.com/servirtium/servirtium-java) (in this org) - ready to use
+2. Python - Being developed story by story as part of demo [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck) and will be extracted to its own library/repo at some point
+3. Ruby - People wishing to lead development sought.
+4. Go - People wishing to lead development sought.
+5. C# - People wishing to lead development sought.
+6. Node.JS - People wishing to lead development sought.
+
+We're also looking to existing Service Virtualiztion frameworks/libs to support (and help refine) the same Markdown format.
