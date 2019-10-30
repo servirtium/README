@@ -24,7 +24,7 @@ Set-Cookie: CookieName=CookieValue
 Header-X: abc-123
 ```
 
-### Response body recorded for playback (200: application/json):
+### Response body recorded for playback (200: text/plain):
 
 ```
 Mary had a little lamb
@@ -34,19 +34,19 @@ Mary had a little lamb
 
 ### Request headers recorded for playback:
 
-...
+... code block ...
 
-### Request body recorded for playback ():
+### Request body recorded for playback (mime/type):
 
-...
+... code block ...
 
 ### Response headers recorded for playback:
 
-...
+... code block ...
 
-### Response body recorded for playback (200: application/json):
+### Response body recorded for playback (200: mime/type):
 
-...
+... code block ...
 
 ## Interaction 2: GET /path/to/yet/another
 
