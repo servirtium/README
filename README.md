@@ -22,3 +22,38 @@ That's the whole point of this format that's human inspectable in raw form and t
 
 ## Syntax
 
+### Multiple Interactions Catered For
+
+Level 2 Markdown Heading denotes interactions: "## Interaction N: <METHOD> <PATH-FROM-ROOT>"
+
+N starts as 0, and goes up depending on how many interactions there were in the conversation.
+
+<METHOD> is GET or POST (or any standard HTML or non stanard method name).
+  
+<PATH-FROM-ROOT> is the path without the domain & port. e.g. /card/addTo.doIt  
+
+### Request And Reply Details Per Interaction
+
+Level 3 Markdown headers denote four sections pertinent to each interaction:
+
+1. The request headers going from the client to the HTTP server
+2. The request body going from the client to the HTTP server (if applicable - GET does not use this)
+3. The response headers coming back from the HTTP server to the clent
+4. The response body coming back from the HTTP server to the clent (some HTTP methods do not use this)
+
+Within each of those there is a single Markdown code block with the details of each.  The lines in that 
+block may be reformatted depending on the settings of the recorder. If binary, then there is a Base64 
+sequence instead (admittedly not so pretty on the eye).
+
+# The Contract That Is Tested During Playback
+
+Playback itself should fail if the headers or body sent by the client to the HTTPServer (through the Servirtium library)
+are not the same versus the recording. It is possible that masking/redacting and general manipulations may have happened
+deliberately during the recording so that to get rid of transient aspects that are not helpful in playback situatons.
+For example any Dates in headers of the body that go from the client to the HTTP Server could be swapped for some date 
+in the future like "2099-01-01" or a date in the past "1970-01-01". That's up to the person who's designing the tests 
+that do he recording and confirming that the same tests in playback mode do the same thing.  If, after that work,
+the request headers or body are different in playback mode, the library should cause the playback to fail. That failure
+being deliberate should be explicit somehow in the log of the unit test framework. This is easier said that done as it
+could be that the playback technology is on a different thread to the test executor.
+
