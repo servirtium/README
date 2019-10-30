@@ -6,3 +6,5 @@ standard, and it would be possible to record a HTTP conversation with (say) a Ru
 
 # Example of Markdown format
 
+![2019-10-30_0553](https://user-images.githubusercontent.com/82182/67832457-a1bee400-fad9-11e9-882c-4a08c1fa23f0.png)
+
