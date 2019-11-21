@@ -1,8 +1,13 @@
 # What is Servirtium?
 
-Servirtium is an attempt to evolve **a standard for recorded HTTP conversations is Markdown** to test-automation purposes. Conversations 
-would be replayable from the same Markdown format. Multiple language implementations would be able work with the same Markdown 
-standard, and it would be possible to record a HTTP conversation with (say) a Ruby library using Test::Unit and the play them back via a (say) Java library for JUnit/TestNG teams.  That would be for the situation where the Ruby team was publishing an API and bundled unit tests with it, but the consuming team was using Java instead of Ruby.
+Servirtium is an attempt to evolve **a standard for recorded HTTP conversations in Markdown** for test-automation purposes. Conversations 
+would be recorded and played back from the same Markdown format. Multiple language implementations would be able work with the same Markdown 
+standard, and it would be possible to record a HTTP conversation with (say) a Ruby library using Test::Unit and the play them back via a 
+(say) Java library for JUnit/TestNG test-writing teams. That would be for the situation where the Ruby team was publishing an API and 
+bundled unit tests with it, but the team consuming API was in a different org/department and was using Java instead of Ruby.
+
+So this would be exclusively for test automation purposes, and not at all for production systems - the **real** services would be hooked 
+up there.
 
 # Example of Markdown format
 
