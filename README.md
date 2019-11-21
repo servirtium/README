@@ -79,3 +79,6 @@ We're also looking to existing *Service Virtualization* frameworks/libs to suppo
 4. .NET - TODO
 5. NodeJS - TODO
 6. Go - TODO
+
+The Java project links to a couple of videos in use.  One is a general talk. Another is for a situation where the 
+depended-on web API was flaky, and you get to see the real benefit of the tech.
