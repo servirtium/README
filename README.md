@@ -38,9 +38,9 @@ N starts as 0, and goes up depending on how many interactions there were in the 
 Each interaction has four sections denoted by a **Level 3 Markdown headers*
 
 1. The request headers going from the client to the HTTP server, denoted like so `### Request headers recorded for playback:`
-2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (&lt;MIME-TYPE>):`
+2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (<MIME-TYPE>):`
 3. The response headers coming back from the HTTP server to the client, denoted like so `### Response headers recorded for playback:`
-4. The response body coming back from the HTTP server to the client (some HTTP methods do not use this), denoted like so `### Response body recorded for playback (&lt;STATUS-CODE>: &lt;MIME-TYPE>):`
+4. The response body coming back from the HTTP server to the client (some HTTP methods do not use this), denoted like so `### Response body recorded for playback (<STATUS-CODE>: <MIME-TYPE>):`
 
 Within each of those there is a single Markdown code block (three back-tick sequences) with the details of each.  The lines in that 
 block may be reformatted depending on the settings of the recorder. If binary, then there is a Base64 
