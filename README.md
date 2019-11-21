@@ -16,7 +16,8 @@ Here's what GitHub (for one) renders that like:
 
 ![2019-10-30_0555](https://user-images.githubusercontent.com/82182/67832562-f2ced800-fad9-11e9-9bbf-8a366ad7c938.png)
 
-That's the whole point of this format that's human inspectable in raw form and that your code-portal renders in a pretty way too.
+That's the whole point of this format that's human-inspectable in raw form and that your code-portal renders in a pretty way too.
+If your code portal is GitHub, then 'pretty' is true.  
 
 (non-screenshot actual rendered file: [https://github.com/servirtium/README/blob/master/example1.md](https://github.com/servirtium/README/blob/master/example1.md))
 
@@ -28,18 +29,18 @@ Each interaction is denoted via a **Level 2 Markdown Heading**. e.g. `## Interac
 
 N starts as 0, and goes up depending on how many interactions there were in the conversation.
 
-<METHOD> is GET or POST (or any standard HTML or non standard method name).
+&lt;METHOD> is GET or POST (or any standard HTML or non standard method name).
   
-<PATH-FROM-ROOT> is the path without the domain & port. e.g. /card/addTo.doIt  
+&lt;PATH-FROM-ROOT> is the path without the domain & port. e.g. /card/addTo.doIt  
 
 ### Request And Reply Details Per Interaction
 
 Each interaction has four sections denoted by a **Level 3 Markdown headers*
 
 1. The request headers going from the client to the HTTP server, denoted like so `### Request headers recorded for playback:`
-2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (<MIME-TYPE>):`
+2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (&lt;MIME-TYPE>):`
 3. The response headers coming back from the HTTP server to the client, denoted like so `### Response headers recorded for playback:`
-4. The response body coming back from the HTTP server to the client (some HTTP methods do not use this), denoted like so `### Response body recorded for playback (<STATUS-CODE>: <MINE-TYPE>):`
+4. The response body coming back from the HTTP server to the client (some HTTP methods do not use this), denoted like so `### Response body recorded for playback (&lt;STATUS-CODE>: &lt;MIME-TYPE>):`
 
 Within each of those there is a single Markdown code block (three back-tick sequences) with the details of each.  The lines in that 
 block may be reformatted depending on the settings of the recorder. If binary, then there is a Base64 
@@ -74,3 +75,7 @@ We're also looking to existing *Service Virtualization* frameworks/libs to suppo
 
 1. Java - [demo-java-climate-data-tck](https://github.com/servirtium/demo-java-climate-data-tck)
 2. Python - [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck)
+3. Ruby - TODO
+4. .NET - TODO
+5. NodeJS - TODO
+6. Go - TODO
