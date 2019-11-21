@@ -9,9 +9,10 @@ correct way for your language could mean something very different.
 
 So in the first Java implementation, there's a 
 `Recorder` or `playback` that works in conjunction with a `Servirtium Server` which listens on a socket an is
-a "man in the middle". That last has a dependency on Jetty. Alternates in Java could be Netty or Undertow. All three 
-of those are open source web servers. There's one built into to later versions of Java, so that could be an 
-alternate then. Ruby and Python had built-in web servers far sooner than Java did, so that'll be less dramatic.
+a "man in the middle". That last has a dependency on Jetty or Undertow (two alternate implemenations) 
+Alternates in Java could be Jetty or Tomcat. All of those 
+are open source web servers. There's one built into to later versions of Java, so that could be another
+alternate one day. Ruby and Python had built-in web servers far sooner than Java did, so that'll be less dramatic.
 
 Similarly, outgoing HTP requests in the Java solution is via the open source component OkHttp. Later versions 
 of java build that in so at some point there'll be a implementation that does that.
