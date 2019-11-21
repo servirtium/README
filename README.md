@@ -60,8 +60,8 @@ could be that the playback technology is on a different thread to the test execu
 # Implementations
 
 1. Java - [Servirtium-Java](https://github.com/servirtium/servirtium-java) (in this org) - ready to use
-2. Python - [Servirtium-Python](../servirtium-python) Being developed story by story as part of demo [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck) and will later be extracted to the library/repo
-3. Ruby - [Servirtium-Ruby](/servirtium/servirtium-ruby) People wishing to lead development sought.
+2. Python - [Servirtium-Python](https://github.com/servirtium/servirtium-python) Being developed story by story as part of demo [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck) and will later be extracted to the library/repo
+3. Ruby - [Servirtium-Ruby](https://github.com/servirtium/servirtium-ruby) People wishing to lead development sought.
 4. Go - People wishing to lead development sought.
 5. C# - People wishing to lead development sought.
 6. Node.JS - People wishing to lead development sought.
