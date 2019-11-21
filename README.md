@@ -28,7 +28,7 @@ Each interaction is denoted via a **Level 2 Markdown Heading**. e.g. `## Interac
 
 N starts as 0, and goes up depending on how many interactions there were in the conversation.
 
-<METHOD> is GET or POST (or any standard HTML or non stanard method name).
+<METHOD> is GET or POST (or any standard HTML or non standard method name).
   
 <PATH-FROM-ROOT> is the path without the domain & port. e.g. /card/addTo.doIt  
 
@@ -38,10 +38,10 @@ Each interaction has four sections denoted by a **Level 3 Markdown headers*
 
 1. The request headers going from the client to the HTTP server, denoted like so `### Request headers recorded for playback:`
 2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (<MIME-TYPE>):`
-3. The response headers coming back from the HTTP server to the clent, denoted like so `### Response headers recorded for playback:`
-4. The response body coming back from the HTTP server to the clent (some HTTP methods do not use this), denoted like so `### Response body recorded for playback (<STATUS-CODE>: <MINE-TYPE>):`
+3. The response headers coming back from the HTTP server to the client, denoted like so `### Response headers recorded for playback:`
+4. The response body coming back from the HTTP server to the client (some HTTP methods do not use this), denoted like so `### Response body recorded for playback (<STATUS-CODE>: <MINE-TYPE>):`
 
-Within each of those there is a single Markdown code block (three backtick sequences) with the details of each.  The lines in that 
+Within each of those there is a single Markdown code block (three back-tick sequences) with the details of each.  The lines in that 
 block may be reformatted depending on the settings of the recorder. If binary, then there is a Base64 
 sequence instead (admittedly not so pretty on the eye).
 
@@ -49,7 +49,7 @@ sequence instead (admittedly not so pretty on the eye).
 
 Playback itself should fail if the headers or body sent by the client to the HTTPServer (through the Servirtium library)
 are not the same versus the recording. It is possible that masking/redacting and general manipulations may have happened
-deliberately during the recording so that to get rid of transient aspects that are not helpful in playback situatons.
+deliberately during the recording so that to get rid of transient aspects that are not helpful in playback situations.
 For example any Dates in headers of the body that go from the client to the HTTP Server could be swapped for some date 
 in the future like "2099-01-01" or a date in the past "1970-01-01". That's up to the person who's designing the tests 
 that do he recording and confirming that the same tests in playback mode do the same thing.  If, after that work,
@@ -60,13 +60,15 @@ could be that the playback technology is on a different thread to the test execu
 # Implementations
 
 1. Java - [Servirtium-Java](https://github.com/servirtium/servirtium-java) (in this org) - ready to use
-2. Python - Being developed story by story as part of demo [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck) and will be extracted to its own library/repo at some point
-3. Ruby - People wishing to lead development sought.
+2. Python - [Servirtium-Python](/servirtium/servirtium-python) Being developed story by story as part of demo [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck) and will later be extracted to the library/repo
+3. Ruby - [Servirtium-Ruby](/servirtium/servirtium-ruby) People wishing to lead development sought.
 4. Go - People wishing to lead development sought.
 5. C# - People wishing to lead development sought.
 6. Node.JS - People wishing to lead development sought.
 
-We're also looking to existing Service Virtualiztion frameworks/libs to support (and help refine) the same Markdown format.
+If you want to start one of these then read [starting a new implementation](starting-a-new-implementation.md)
+
+We're also looking to existing *Service Virtualization* frameworks/libs to support (and help refine) the same Markdown format.
 
 # Demo Projects
 
