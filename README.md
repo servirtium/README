@@ -39,7 +39,7 @@ If your code portal is GitHub, then 'pretty' is true.
 
 (non-screenshot actual rendered file: [https://github.com/servirtium/README/blob/master/example1.md](https://github.com/servirtium/README/blob/master/example1.md))
 
-... and you'd be storing that VCS as yo would your automated tests.
+... and you'd be storing that VCS as you would your automated tests.
 
 ## Markdown Syntax Explained
 
@@ -47,18 +47,18 @@ If your code portal is GitHub, then 'pretty' is true.
 
 Each interaction is denoted via a **Level 2 Markdown Heading**. e.g. `## Interaction N: <METHOD> <PATH-FROM-ROOT>`
 
-N starts as 0, and goes up depending on how many interactions there were in the conversation.
+`N` starts as 0, and goes up depending on how many interactions there were in the conversation.
 
-&lt;METHOD> is GET or POST (or any standard HTML or non standard method name).
+`&lt;METHOD>` is GET or POST (or any standard HTML or non standard method/verb name).
   
-&lt;PATH-FROM-ROOT> is the path without the domain & port. e.g. /card/addTo.doIt  
+`&lt;PATH-FROM-ROOT>` is the path without the domain & port. e.g. /card/addTo.doIt  
 
 ### Request And Reply Details Per Interaction
 
 Each interaction has four sections denoted by a **Level 3 Markdown headers*
 
 1. The request headers going from the client to the HTTP server, denoted like so `### Request headers recorded for playback:`
-2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (<MIME-TYPE>):`
+2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (<MIME-TYPE>):`. And `&lt;MIME-TYPE>` is something like `application/json` 
 3. The response headers coming back from the HTTP server to the client, denoted like so `### Response headers recorded for playback:`
 4. The response body coming back from the HTTP server to the client (some HTTP methods do not use this), denoted like so `### Response body recorded for playback (<STATUS-CODE>: <MIME-TYPE>):`
 
@@ -68,7 +68,15 @@ sequence instead (admittedly not so pretty on the eye).
 
 # Recording vs Playback
 
-## Playback can fail
+## Recording a HTTP conversation
+
+You'll write your test (say JUnit) and that will use a library (that your company may have written or be from a vendor). For 
+recording you will swap the real service URL for one running a Servirtium middle-man server (which itself will delegate to 
+the real service).  If that service is flaky - keep re-running the test manually until the service is non-flaky, and commit 
+that Servirtium-style markdown to source-control.  Best practice is to configure the same test two have two modes of 
+operation: 'direct' and 'recording' modes.
+
+## Playback can fail too
 
 Playback itself should fail if the headers or body sent by the client to the real service (through the Servirtium library)
 are **not** the same versus the recording. It is possible that masking/redacting and general manipulations should happen
@@ -85,6 +93,9 @@ in the markdown regardless of the number of time the same test is re-recorded.
 Note: How a difference in request-header or request-body expectation is 
 logged in the test output needs to be part of the deliberate design of the tests themselves. This is easier said than 
 done, and you can't catch assertion failures over HTTP.
+
+Note2: this is a third mode of operation for the same test as in "Recording a HTTP conversation" above - "playback" 
+mode meaning you have three modes of operation all in all.
 
 # Language Implementations
 
