@@ -1,10 +1,11 @@
 # What is Servirtium?
 
-Servirtium aims to be **a lingua franca for mock HTTP conversations using Markdown in source-control** 
+Servirtium aims to be **a lingua franca for mock HTTP conversations using Markdown under source-control** 
 
 * for test-automation purposes only
 * with interoperable record and playback capability in Java, C#, Ruby, Python, NodeJS, Go, Rust and more.
 * API makers would get on board too, shipping markdown conversations for known test scenarios
+* oh, and JSON/YAML is the **wrong** format for encoding HTTP conversations in!
 
 HTTP conversations for services invoked by running tests 
 would be recorded and played back from the same Markdown format. Multiple language implementations would be able work with the same Markdown 
