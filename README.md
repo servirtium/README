@@ -59,19 +59,27 @@ Within each of those there is a single Markdown code block (three back-tick sequ
 block may be reformatted depending on the settings of the recorder. If binary, then there is a Base64 
 sequence instead (admittedly not so pretty on the eye).
 
-# The Contract That Is Tested During Playback
+# Recording vs Playback
 
-Playback itself should fail if the headers or body sent by the client to the HTTPServer (through the Servirtium library)
-are not the same versus the recording. It is possible that masking/redacting and general manipulations may have happened
-deliberately during the recording so that to get rid of transient aspects that are not helpful in playback situations.
-For example any Dates in headers of the body that go from the client to the HTTP Server could be swapped for some date 
-in the future like "2099-01-01" or a date in the past "1970-01-01". That's up to the person who's designing the tests 
-that do he recording and confirming that the same tests in playback mode do the same thing.  If, after that work,
-the request headers or body are different in playback mode, the library should cause the playback to fail. That failure
-being deliberate should be explicit somehow in the log of the unit test framework. This is easier said that done as it
-could be that the playback technology is on a different thread to the test executor.
+## Playback can fail
 
-# Implementations
+Playback itself should fail if the headers or body sent by the client to the real service (through the Servirtium library)
+are **not** the same versus the recording. It is possible that masking/redacting and general manipulations should happen
+deliberately during the recording to get rid of transient aspects that are not helpful in playback situations.  The test
+failing in this situation is deliberate - you're using this to guard against potential incompatibilities. 
+
+For example any dates in headers of the body that go from the client to the HTTP Server could be swapped for some date 
+in the future like "2099-01-01" or a date in the past "1970-01-01". 
+
+The person who's designing the tests 
+that recording or playback would work on the redactions/masking towards an "always passing" outcome, with no differences 
+in the markdown regardless of the number of time the same test is re-recorded. 
+
+Note: How a difference in request-header or request-body expectation is 
+logged in the test output needs to be part of the deliberate design of the tests themselves. This is easier said than 
+done, and you can't catch assertion failures over HTTP.
+
+# Language Implementations
 
 1. Java - [Servirtium-Java](https://github.com/servirtium/servirtium-java) (in this org) - ready to use
 2. Python - [Servirtium-Python](https://github.com/servirtium/servirtium-python) Being developed story by story as part of demo [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck) and will later be extracted to the library/repo
