@@ -1,15 +1,21 @@
 # What is Servirtium?
 
-Servirtium is an attempt to evolve **a standard for recorded HTTP conversations in Markdown** for test-automation purposes. Conversations 
+Servirtium aims to be **a lingua franca for mock HTTP conversations using Markdown in source-control** 
+
+* for test-automation purposes only
+* with interoperable record and playback capability in Java, C#, Ruby, Python, NodeJS, Go, Rust and more.
+* API makers would get on board too, shipping markdown conversations for known test scenarios
+
+HTTP conversations for services invoked by running tests 
 would be recorded and played back from the same Markdown format. Multiple language implementations would be able work with the same Markdown 
 standard, and it would be possible to record a HTTP conversation with (say) a Ruby library using Test::Unit and the play them back via a 
 (say) Java library for JUnit/TestNG test-writing teams. That would be for the situation where the Ruby team was publishing an API and 
 bundled unit tests with it, but the team consuming API was in a different org/department and was using Java instead of Ruby.
 
-So this would be exclusively for test automation purposes, and not at all for production systems - the **real** services would be hooked 
+So this would be exclusively for test automation purposes. Production deployments would not use any Servirtium technologies - the **real** services would be hooked 
 up there.
 
-# Example of Markdown format
+# Example of that Markdown format
 
 Here's a screenshot of some raw markdown source:
 
@@ -25,6 +31,8 @@ That's the whole point of this format that's human-inspectable in raw form and t
 If your code portal is GitHub, then 'pretty' is true.  
 
 (non-screenshot actual rendered file: [https://github.com/servirtium/README/blob/master/example1.md](https://github.com/servirtium/README/blob/master/example1.md))
+
+... and you'd be storing that VCS as yo would your automated tests.
 
 ## Markdown Syntax Explained
 
