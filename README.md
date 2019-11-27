@@ -49,16 +49,16 @@ Each interaction is denoted via a **Level 2 Markdown Heading**. e.g. `## Interac
 
 `N` starts as 0, and goes up depending on how many interactions there were in the conversation.
 
-`&lt;METHOD>` is GET or POST (or any standard HTML or non standard method/verb name).
+`<METHOD>` is GET or POST (or any standard HTML or non standard method/verb name).
   
-`&lt;PATH-FROM-ROOT>` is the path without the domain & port. e.g. /card/addTo.doIt  
+`<PATH-FROM-ROOT>` is the path without the domain & port. e.g. /card/addTo.doIt  
 
 ### Request And Reply Details Per Interaction
 
 Each interaction has four sections denoted by a **Level 3 Markdown headers*
 
 1. The request headers going from the client to the HTTP server, denoted like so `### Request headers recorded for playback:`
-2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (<MIME-TYPE>):`. And `&lt;MIME-TYPE>` is something like `application/json` 
+2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (<MIME-TYPE>):`. And `<MIME-TYPE>` is something like `application/json` 
 3. The response headers coming back from the HTTP server to the client, denoted like so `### Response headers recorded for playback:`
 4. The response body coming back from the HTTP server to the client (some HTTP methods do not use this), denoted like so `### Response body recorded for playback (<STATUS-CODE>: <MIME-TYPE>):`
 
