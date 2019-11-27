@@ -57,16 +57,16 @@ Each interaction is denoted via a **Level 2 Markdown Heading**. e.g. `## Interac
 
 Each interaction has four sections denoted by a **Level 3 Markdown headers*
 
-1. The request headers going from the client to the HTTP server, denoted like so `### Request headers recorded for playback:`
-2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted like so `### Request body recorded for playback (<MIME-TYPE>):`. And `<MIME-TYPE>` is something like `application/json` 
-3. The response headers coming back from the HTTP server to the client, denoted like so `### Response headers recorded for playback:`
-4. The response body coming back from the HTTP server to the client (some HTTP methods do not use this), denoted like so `### Response body recorded for playback (<STATUS-CODE>: <MIME-TYPE>):`
+1. The request headers going from the client to the HTTP server, denoted with a heading like so `### Request headers recorded for playback:`
+2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted  with a heading like so `### Request body recorded for playback (<MIME-TYPE>):`. And `<MIME-TYPE>` is something like `application/json` 
+3. The response headers coming back from the HTTP server to the client, denoted with a heading like so `### Response headers recorded for playback:`
+4. The response body coming back from the HTTP server to the client (some HTTP methods do not use this), denoted with a heading like so `### Response body recorded for playback (<STATUS-CODE>: <MIME-TYPE>):`
 
-Within each of those there is a single Markdown code block (three back-tick sequences) with the details of each.  The lines in that 
+Within each of those there is a single Markdown code block (three back-ticks) with the details of each.  The lines in that 
 block may be reformatted depending on the settings of the recorder. If binary, then there is a Base64 
 sequence instead (admittedly not so pretty on the eye).
 
-# Recording vs Playback
+# Recording and Playback
 
 ## Recording a HTTP conversation
 
@@ -76,10 +76,15 @@ the real service).  If that service is flaky - keep re-running the test manually
 that Servirtium-style markdown to source-control.  Best practice is to configure the same test two have two modes of 
 operation: 'direct' and 'recording' modes.
 
-## Playback can fail too
+Anyway, the recording ends up in the markdown described in a text file on your file system - which you'll commit to 
+VCS alongside your tests.
 
-Playback itself should fail if the headers or body sent by the client to the real service (through the Servirtium library)
-are **not** the same versus the recording. It is possible that masking/redacting and general manipulations should happen
+## Playback of HTTP conversations
+
+Those same markdown recordings are used in playback. 
+
+Playback itself will fail if the headers/body **sent by the client to the real service** (through the Servirtium library)
+are **not** the same they were when the recording was made. It is possible that masking/redacting and general manipulations should happen
 deliberately during the recording to get rid of transient aspects that are not helpful in playback situations.  The test
 failing in this situation is deliberate - you're using this to guard against potential incompatibilities. 
 
