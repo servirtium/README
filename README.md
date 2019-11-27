@@ -7,7 +7,13 @@ Servirtium aims to be **a lingua franca for mock HTTP conversations using Markdo
 * API makers would get on board too, shipping markdown conversations for known test scenarios
 * oh, and JSON/YAML is the **wrong** format for encoding HTTP conversations in!
 
-HTTP conversations for services invoked by running tests 
+In common with other "Service Virtualization" technologies, tests leveraging previously recorded HTTP conversations:
+
+* are much faster (real services vary in speed and can be slow)
+* don't fail in unexpected ways (real services can be flaky)
+* don't require credentials per person running the tests (real services often require API keys/tokens)
+
+With Servirtium, the HTTP conversations for services invoked by running tests 
 would be recorded and played back from the same Markdown format. Multiple language implementations would be able work with the same Markdown 
 standard, and it would be possible to record a HTTP conversation with (say) a Ruby library using Test::Unit and the play them back via a 
 (say) Java library for JUnit/TestNG test-writing teams. That would be for the situation where the Ruby team was publishing an API and 
