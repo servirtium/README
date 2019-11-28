@@ -1,3 +1,8 @@
+# Who would use Servirtium?
+
+* Developers and test engineers writing fast unit tests that would invoke slow or flaky remote services over HTTP 
+* Vendors and service makers wanting to ship executable know-how to their clients and developer community
+
 # What is Servirtium?
 
 Servirtium aims to be **a lingua franca for mock HTTP conversations using Markdown under source-control** 
@@ -9,9 +14,9 @@ Servirtium aims to be **a lingua franca for mock HTTP conversations using Markdo
 
 In common with other "Service Virtualization" technologies, tests leveraging previously recorded HTTP conversations:
 
-* are much faster (real services vary in speed and can be slow)
-* don't fail in unexpected ways (real services can be flaky)
-* don't require credentials per person running the tests (real services often require API keys/tokens)
+* are much faster - real services vary in speed and can be generally slow than desired
+* don't fail in unexpected ways - real services can be flaky
+* don't require credentials per person running the tests - real services often require API keys/tokens (even "sandbox" ones)
 
 With Servirtium, the HTTP conversations for services invoked by running tests 
 would be recorded and played back from the same Markdown format. Multiple language implementations would be able work with the same Markdown 
@@ -24,7 +29,7 @@ up there.
 
 # Example of that Markdown format
 
-Here's a screenshot of some raw markdown source:
+Here's a screen-shot of some raw markdown source:
 
 ![2019-10-30_0559](https://user-images.githubusercontent.com/82182/67832718-7092e380-fada-11e9-94a8-58dcc82810cb.png)
 
@@ -124,5 +129,10 @@ We're also looking to existing *Service Virtualization* frameworks/libs to suppo
 5. NodeJS - TODO
 6. Go - TODO
 
-The Java project links to a couple of videos in use.  One is a general talk. Another is for a situation where the 
-depended-on web API was flaky, and you get to see the real benefit of the tech.
+# Videos
+
+There is a video of WorldBank's climate API being virtualized for testing with Servirtium-java here -  https://youtu.be/256kAL890GI. 
+
+Another video captures a day that service was flaky (2.5 mins):
+
+[![Watch the video](https://user-images.githubusercontent.com/82182/69798628-8a067880-11c9-11ea-92f7-8eccfeee1125.png)
