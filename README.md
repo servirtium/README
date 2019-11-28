@@ -131,8 +131,10 @@ We're also looking to existing *Service Virtualization* frameworks/libs to suppo
 
 # Videos
 
-There is a video of WorldBank's climate API being virtualized for testing with Servirtium-java here -  https://youtu.be/256kAL890GI. 
+There is a video of WorldBank's climate API being virtualized for testing with Servirtium-java here (12 mins):
+
+[![Watch the video](https://user-images.githubusercontent.com/82182/69798811-ecf80f80-11c9-11ea-8a8c-14c7be6d4218.png)](https://youtu.be/256kAL890GI)
 
 Another video captures a day that service was flaky (2.5 mins):
 
-[![Watch the video](https://user-images.githubusercontent.com/82182/69798628-8a067880-11c9-11ea-92f7-8eccfeee1125.png)
+[![Watch the video](https://user-images.githubusercontent.com/82182/69798628-8a067880-11c9-11ea-92f7-8eccfeee1125.png)](https://youtu.be/PEsVkMUH6uQ)
