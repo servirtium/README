@@ -1,7 +1,7 @@
 # Who would use Servirtium?
 
 * Developers and test engineers writing fast unit tests that would invoke slow or flaky remote services over HTTP 
-* Vendors and service makers wanting to ship executable know-how to their clients and developer community
+* Enlightened vendors and service makers wanting to ship executable know-how to their clients and developer community
 
 # What is Servirtium?
 
@@ -27,7 +27,11 @@ bundled unit tests with it, but the team consuming API was in a different org/de
 So this would be exclusively for test automation purposes. Production deployments would not use any Servirtium technologies - the **real** services would be hooked 
 up there.
 
-# Example of that Markdown format
+## Related contract ideas/tools.
+
+[RAML](https://raml.org/) and [Swagger](https://swagger.io/) are complimentary specification technologies, not competitive.
+
+# Example of the Servirtium Markdown format
 
 Here's a screen-shot of some raw markdown source:
 
@@ -71,7 +75,7 @@ Within each of those there is a single Markdown code block (three back-ticks) wi
 block may be reformatted depending on the settings of the recorder. If binary, then there is a Base64 
 sequence instead (admittedly not so pretty on the eye).
 
-# Recording and Playback
+# Discussing Recording and Playback
 
 ## Recording a HTTP conversation
 
