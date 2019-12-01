@@ -133,7 +133,7 @@ We're also looking to existing *Service Virtualization* frameworks/libs to suppo
 5. NodeJS - TODO
 6. Go - TODO
 
-# Videos
+# Videos about Servirtium's markdown
 
 There is a video of WorldBank's climate API being virtualized for testing with Servirtium-java here (12 mins):
 
@@ -141,4 +141,8 @@ There is a video of WorldBank's climate API being virtualized for testing with S
 
 Another video captures a day that service was flaky (2.5 mins):
 
-[![Watch the video](https://user-images.githubusercontent.com/82182/69798628-8a067880-11c9-11ea-92f7-8eccfeee1125.png)](https://youtu.be/PEsVkMUH6uQ)
+[![Watch the video](https://user-images.githubusercontent.com/82182/69798628-8a067880-11c9-11ea-92f7-8eccfeee1125.png)](https://youtu.be/PEsVkMUH6uQ) 
+
+# Blog entries about Servirtium's markdown
+
+* [TCKs and Servirtium](https://paulhammant.com/2019/06/14/tcks-and-servirtium/)
