@@ -1,22 +1,27 @@
 # Who would use Servirtium?
 
-* Developers and test engineers writing fast unit tests that would invoke slow or flaky remote services over HTTP 
+* Developers and test engineers wanting to write fast automated tests that would invoke slow or flaky remote services over HTTP
 * Enlightened vendors and service makers wanting to ship executable know-how to their clients and developer community
+* People that super love Markdown in Git, and look for excuses to lol around in that stuff
+* Coders that have JSON fatigue or don't like "test data" (or similar) in a a shared service/database
 
 # What is Servirtium?
 
-Servirtium aims to be **a lingua franca for mock HTTP conversations using Markdown under source-control** 
+Servirtium aims to be **a lingua franca for mock HTTP conversations using Markdown under source-control**: 
 
-* for test-automation purposes only
 * with interoperable record and playback capability in Java, C#, Ruby, Python, NodeJS, Go, Rust and more.
-* API makers would get on board too, shipping markdown conversations for known test scenarios
-* oh, and JSON/YAML is the **wrong** format for encoding HTTP conversations in!
+* for test-automation purposes only
+* API makers sould get on board too, shipping markdown conversations for known test scenarios (as well as a sample test that would use that in their fave language)
+* oh, and JSON/YAML is the **wrong** format for encoding HTTP conversations in - it is not pretty on the eye and not easily eyeball diffable
 
-In common with other "Service Virtualization" technologies, tests leveraging previously recorded HTTP conversations:
+## In common with other "Service Virtualization" technologies
 
-* are much faster - real services vary in speed and can be generally slow than desired
+* tests can leverage previously recorded HTTP conversations:
+* are much faster than real services which can vary in speed at least, but are typically slower than desired
 * don't fail in unexpected ways - real services can be flaky
-* don't require credentials per person running the tests - real services often require API keys/tokens (even "sandbox" ones)
+* don't require credentials per person running the tests - real services often require API keys/tokens (even "sandbox" ones) and devs often share those against vendor (and employer) rules.
+
+## The markdown difference
 
 With Servirtium, the HTTP conversations for services invoked by running tests 
 would be recorded and played back from the same Markdown format. Multiple language implementations would be able work with the same Markdown 
