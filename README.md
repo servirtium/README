@@ -1,4 +1,4 @@
-
+![](Servirtium-Square.png?raw=true)
 
 # Who would use Servirtium?
 
@@ -13,7 +13,7 @@ Servirtium aims to be **a lingua franca for mock HTTP conversations using Markdo
 
 * with interoperable record and playback capability in Java, C#, Ruby, Python, NodeJS, Go, Rust and more.
 * for test-automation purposes only
-* API makers sould get on board too, shipping markdown conversations for known test scenarios (as well as a sample test that would use that in their fave language)
+* API makers should get on board too, shipping markdown conversations for known test scenarios (as well as a sample test that would use that in their fave language)
 * oh, and JSON/YAML is the **wrong** format for encoding HTTP conversations in - it is not pretty on the eye and not easily eyeball diffable
 
 ## In common with other "Service Virtualization" technologies
