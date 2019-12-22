@@ -1,144 +1,16 @@
 ![](Servirtium-Square.png?raw=true)
 
-# Who would use Servirtium?
+See [servirtium.dev/](https://servirtium.dev/) for:
 
-* Developers and test engineers wanting to write fast automated tests that would invoke slow or flaky remote services over HTTP
-* Enlightened vendors and service makers wanting to ship executable know-how to their clients and developer community
-* People that super love Markdown in Git, and look for excuses to lol around in that stuff
-* Coders that have JSON fatigue or don't like "test data" (or similar) in a a shared service/database
-
-# What is Servirtium?
-
-Servirtium aims to be **a lingua franca for mock HTTP conversations using Markdown under source-control**: 
-
-* with interoperable record and playback capability in Java, C#, Ruby, Python, NodeJS, Go, Rust and more.
-* for test-automation purposes only
-* API makers should get on board too, shipping markdown conversations for known test scenarios (as well as a sample test that would use that in their fave language)
-* oh, and JSON/YAML is the **wrong** format for encoding HTTP conversations in - it is not pretty on the eye and not easily eyeball diffable
-
-## In common with other "Service Virtualization" technologies
-
-* tests can leverage previously recorded HTTP conversations:
-* are much faster than real services which can vary in speed at least, but are typically slower than desired
-* don't fail in unexpected ways - real services can be flaky
-* don't require credentials per person running the tests - real services often require API keys/tokens (even "sandbox" ones) and devs often share those against vendor (and employer) rules.
-
-## The markdown difference
-
-With Servirtium, the HTTP conversations for services invoked by running tests 
-would be recorded and played back from the same Markdown format. Multiple language implementations would be able work with the same Markdown 
-standard, and it would be possible to record a HTTP conversation with (say) a Ruby library using Test::Unit and the play them back via a 
-(say) Java library for JUnit/TestNG test-writing teams. That would be for the situation where the Ruby team was publishing an API and 
-bundled unit tests with it, but the team consuming API was in a different org/department and was using Java instead of Ruby.
-
-So this would be exclusively for test automation purposes. Production deployments would not use any Servirtium technologies - the **real** services would be hooked 
-up there.
-
-## Related contract ideas/tools.
-
-[RAML](https://raml.org/) and [Swagger](https://swagger.io/) are complimentary specification technologies, not competitive.
-
-# Example of the Servirtium Markdown format
-
-Here's a screen-shot of some raw markdown source:
-
-![2019-10-30_0559](https://user-images.githubusercontent.com/82182/67832718-7092e380-fada-11e9-94a8-58dcc82810cb.png)
-
-(non-screenshot actual source: [https://raw.githubusercontent.com/servirtium/README/master/example1.md](https://raw.githubusercontent.com/servirtium/README/master/example1.md))
-
-Here's what GitHub (for one) renders that like:
-
-![2019-10-30_0555](https://user-images.githubusercontent.com/82182/67832562-f2ced800-fad9-11e9-9bbf-8a366ad7c938.png)
-
-That's the whole point of this format that's human-inspectable in raw form and that your code-portal renders in a pretty way too.
-If your code portal is GitHub, then 'pretty' is true.  
-
-(non-screenshot actual rendered file: [https://github.com/servirtium/README/blob/master/example1.md](https://github.com/servirtium/README/blob/master/example1.md))
-
-... and you'd be storing that VCS as you would your automated tests.
-
-## Markdown Syntax Explained
-
-### Multiple Interactions Catered For
-
-Each interaction is denoted via a **Level 2 Markdown Heading**. e.g. `## Interaction N: <METHOD> <PATH-FROM-ROOT>`
-
-`N` starts as 0, and goes up depending on how many interactions there were in the conversation.
-
-`<METHOD>` is GET or POST (or any standard HTML or non standard method/verb name).
-  
-`<PATH-FROM-ROOT>` is the path without the domain & port. e.g. /card/addTo.doIt  
-
-### Request And Reply Details Per Interaction
-
-Each interaction has four sections denoted by a **Level 3 Markdown headers*
-
-1. The request headers going from the client to the HTTP server, denoted with a heading like so `### Request headers recorded for playback:`
-2. The request body going from the client to the HTTP server (if applicable - GET does not use this), denoted  with a heading like so `### Request body recorded for playback (<MIME-TYPE>):`. And `<MIME-TYPE>` is something like `application/json` 
-3. The response headers coming back from the HTTP server to the client, denoted with a heading like so `### Response headers recorded for playback:`
-4. The response body coming back from the HTTP server to the client (some HTTP methods do not use this), denoted with a heading like so `### Response body recorded for playback (<STATUS-CODE>: <MIME-TYPE>):`
-
-Within each of those there is a single Markdown code block (three back-ticks) with the details of each.  The lines in that 
-block may be reformatted depending on the settings of the recorder. If binary, then there is a Base64 
-sequence instead (admittedly not so pretty on the eye).
-
-# Discussing Recording and Playback
-
-## Recording a HTTP conversation
-
-You'll write your test (say JUnit) and that will use a library (that your company may have written or be from a vendor). For 
-recording you will swap the real service URL for one running a Servirtium middle-man server (which itself will delegate to 
-the real service).  If that service is flaky - keep re-running the test manually until the service is non-flaky, and commit 
-that Servirtium-style markdown to source-control.  Best practice is to configure the same test two have two modes of 
-operation: 'direct' and 'recording' modes.
-
-Anyway, the recording ends up in the markdown described in a text file on your file system - which you'll commit to 
-VCS alongside your tests.
-
-## Playback of HTTP conversations
-
-Those same markdown recordings are used in playback. 
-
-Playback itself will fail if the headers/body **sent by the client to the real service** (through the Servirtium library)
-are **not** the same they were when the recording was made. It is possible that masking/redacting and general manipulations should happen
-deliberately during the recording to get rid of transient aspects that are not helpful in playback situations.  The test
-failing in this situation is deliberate - you're using this to guard against potential incompatibilities. 
-
-For example any dates in headers of the body that go from the client to the HTTP Server could be swapped for some date 
-in the future like "2099-01-01" or a date in the past "1970-01-01". 
-
-The person who's designing the tests 
-that recording or playback would work on the redactions/masking towards an "always passing" outcome, with no differences 
-in the markdown regardless of the number of time the same test is re-recorded. 
-
-Note: How a difference in request-header or request-body expectation is 
-logged in the test output needs to be part of the deliberate design of the tests themselves. This is easier said than 
-done, and you can't catch assertion failures over HTTP.
-
-Note2: this is a third mode of operation for the same test as in "Recording a HTTP conversation" above - "playback" 
-mode meaning you have three modes of operation all in all.
-
-# Language Implementations
-
-1. Java - [Servirtium-Java](https://github.com/servirtium/servirtium-java) (in this org) - ready to use
-2. Python - [Servirtium-Python](https://github.com/servirtium/servirtium-python) - alpha quality (help needed)
-3. Ruby - [Servirtium-Ruby](https://github.com/servirtium/servirtium-ruby) People wishing to lead development sought.
-4. Go - People wishing to lead development sought.
-5. C# - People wishing to lead development sought.
-6. Node.JS - People wishing to lead development sought.
-
-If you want to start one of these then read [starting a new implementation](starting-a-new-implementation.md)
-
-We're also looking to existing *Service Virtualization* frameworks/libs to support (and help refine) the same Markdown format.
-
-# Demo Projects
-
-1. Java - [demo-java-climate-data-tck](https://github.com/servirtium/demo-java-climate-data-tck)
-2. Python - [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck)
-3. Ruby - TODO
-4. .NET - TODO
-5. NodeJS - TODO
-6. Go - TODO
+* About
+* History (a timeline)
+* What It Is
+* Markdown Examples (with pics)
+* Markdown Discussion
+* Library/lang spider chart
+* Specific Implementations
+* Example Projects
+* Blog
 
 # Videos about Servirtium's markdown
 
@@ -153,3 +25,25 @@ Another video captures a day that service was flaky (2.5 mins):
 # Blog entries about Servirtium's markdown
 
 * [TCKs and Servirtium](https://paulhammant.com/2019/06/14/tcks-and-servirtium/)
+
+# Language Implementations in this GitHub org
+
+1. Java - [Servirtium-Java](https://github.com/servirtium/servirtium-java) (in this org) - ready to use
+2. Python - [Servirtium-Python](https://github.com/servirtium/servirtium-python) - alpha quality (help needed)
+3. Ruby - [Servirtium-Ruby](https://github.com/servirtium/servirtium-ruby) People wishing to lead development sought.
+4. Go - People wishing to lead development sought.
+5. C# - People wishing to lead development sought.
+6. Node.JS - People wishing to lead development sought.
+
+If you want to start one of these then read [starting a new implementation](starting-a-new-implementation.md)
+
+We're also looking to existing *Service Virtualization* frameworks/libs to support (and help refine) the same Markdown format.
+
+# Demo Projects in this GitHub org
+
+1. Java - [demo-java-climate-data-tck](https://github.com/servirtium/demo-java-climate-data-tck)
+2. Python - [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck)
+3. Ruby - TODO
+4. .NET - TODO
+5. NodeJS - TODO
+6. Go - TODO
