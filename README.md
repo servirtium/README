@@ -12,6 +12,14 @@ See [servirtium.dev/](https://servirtium.dev/) for:
 * Example Projects
 * Blog
 
+Markdown is best for HTTP recordings for test purposes, and you need to really understand the TCK side of the proposition 
+to really get WHY this technology was started, and pre-existing solutions were not good enough. https://xkcd.com/927/ does 
+or does not apply depending on your point of view.
+
+# General Development discussions
+
+Google Group: https://groups.google.com/forum/?hl=en#!forum/servirtium-dev
+
 # Videos about Servirtium's markdown
 
 There is a video of WorldBank's climate API being virtualized for testing with Servirtium-java here (12 mins):
