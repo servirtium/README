@@ -32,9 +32,25 @@ In the Java demo that utilizes the World-Bank's Climate API [take a look at Clim
  
 [See PlaybackClimateApiTests.java](https://github.com/servirtium/demo-java-climate-data-tck/blob/master/src/test/java/com/paulhammant/climatedata/PlaybackClimateApiTests.java) and the mocks that it uses for playback [in here](https://github.com/servirtium/demo-java-climate-data-tck/tree/master/src/test/mocks). In the Java version PlaybackClimateApiTests is a subclass of ClimateApiTests, but you may want to achieve the same thing in a different way.  This creates your fledgeling Servirtium.
 
-## 3. You should have the hang of this mow - move on to record
+To be clear, the same tests have the ability to pass in "direct" (no Servirtium) and "playback" modes of operation
+
+## 3. Adding record "record"
+
+You should have the hang of this now :)
 
 [See RecordingClimateApiTests.java](https://github.com/servirtium/demo-java-climate-data-tck/blob/master/src/test/java/com/paulhammant/climatedata/RecordingClimateApiTests.java) - this (a subclass again) adds tests recording mode for the Servirtium for the same test cases.
+mow
 
-## 4. Now think about the other HTTP verbs other than 'GET'
+To be clear, the same tests have the ability to pass in "direct" (no Servirtium), "playback", and "record" modes of operation
 
+Success is where the recording doesn't change regardless of how many time you run the tests (overwriting the .md files in tests/mocks/ (or whatever you have as that directory in Git)
+
+## 4. Extract the library from the climate demo, to its own repo
+
+This is so that others could use the library. The demo project needs to be able to acquire the package, of course.  Pure unit tests
+could be a good idea at this stage, as the climate tests are integration/service tests.
+
+## 5 Other HTTP verbs other than 'GET'
+
+POST, PUT are needed too - unlike GET they have a request body. Maybe just do unit tests for this, as the library shouldn't be
+overly dependant on remote services.
