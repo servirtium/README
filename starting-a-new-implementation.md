@@ -28,6 +28,12 @@ scale.
  
 In the Java demo that utilizes the World-Bank's Climate API [take a look at ClimateApiTests.java](https://github.com/servirtium/demo-java-climate-data-tck/blob/master/src/test/java/com/paulhammant/climatedata/ClimateApiTests.java). Obviously not JUnit for your language, but PyTest, RSpec, Jasmine, NUnit (etc) instead. 
 
+Here's the sum total of the "direct" tests from the Python testbase:
+
+![image](https://user-images.githubusercontent.com/82182/71445595-c2d73600-2712-11ea-8e68-81cefac5b9fa.png)
+
+And the URLs you're trying to hit is `http://climatedataapi.worldbank.org/climateweb/rest/v1/country/annualavg/pr/{fromCCYY}/{toCCYY}/{countryISO}.xml`. Yes, the 'gbr+fra' test hits the HTTP api twice (yes that breaks the facade pattern, but this is just a test harness for Servirtium).
+
 ## 2. Implement the "playback" for the same test cases
  
 [See PlaybackClimateApiTests.java](https://github.com/servirtium/demo-java-climate-data-tck/blob/master/src/test/java/com/paulhammant/climatedata/PlaybackClimateApiTests.java) and the mocks that it uses for playback [in here](https://github.com/servirtium/demo-java-climate-data-tck/tree/master/src/test/mocks). In the Java version PlaybackClimateApiTests is a subclass of ClimateApiTests, but you may want to achieve the same thing in a different way.  This creates your fledgeling Servirtium.
@@ -52,5 +58,5 @@ could be a good idea at this stage, as the climate tests are integration/service
 
 ## 5 Other HTTP verbs other than 'GET'
 
-POST, PUT are needed too - unlike GET they have a request body. Maybe just do unit tests for this, as the library shouldn't be
+POST, PUT are needed too - unlike GET they have a request body. Maybe just do unit tests for this, as the library's build shouldn't be
 overly dependant on remote services.
