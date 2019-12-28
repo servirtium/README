@@ -1,4 +1,5 @@
-![](Servirtium-Square.png?raw=true)
+
+
 
 See [servirtium.dev/](https://servirtium.dev/) for:
 
@@ -7,18 +8,10 @@ See [servirtium.dev/](https://servirtium.dev/) for:
 * What It Is
 * Markdown Examples (with pics)
 * Markdown Discussion
-* Library/lang spider chart showing witch languages need love
-* Specific Implementations - links (also below)
-* Example Projects - link (also below)
-* Blog/News
-
-Markdown is best for HTTP recordings for test purposes, and you need to really understand the TCK side of the proposition 
-to really get WHY this technology was started, and pre-existing solutions were not good enough. https://xkcd.com/927/ does 
-or does not apply depending on your point of view.
-
-# General Development discussions
-
-Google Group: https://groups.google.com/forum/?hl=en#!forum/servirtium-dev
+* Library/lang spider chart
+* Specific Implementations
+* Example Projects
+* Blog
 
 # Videos about Servirtium's markdown
 

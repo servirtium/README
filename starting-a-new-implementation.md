@@ -32,6 +32,8 @@ Here's the sum total of the "direct" tests from the Python testbase:
 
 ![image](https://user-images.githubusercontent.com/82182/71445595-c2d73600-2712-11ea-8e68-81cefac5b9fa.png)
 
+(Source for that: https://github.com/servirtium/demo-python-climate-data-tck/blob/master/src/test/TestClimateApi.py)
+
 And the URLs you're trying to hit is `http://climatedataapi.worldbank.org/climateweb/rest/v1/country/annualavg/pr/{fromCCYY}/{toCCYY}/{countryISO}.xml`. Yes, the 'gbr+fra' test hits the HTTP api twice (yes that breaks the facade pattern, but this is just a test harness for Servirtium).
 
 ## 2. Implement the "playback" for the same test cases
@@ -40,7 +42,7 @@ And the URLs you're trying to hit is `http://climatedataapi.worldbank.org/climat
 
 To be clear, the same tests have the ability to pass in "direct" (no Servirtium) and "playback" modes of operation
 
-## 3. Adding record "record"
+## 3. Adding "record" mode
 
 You should have the hang of this now :)
 
