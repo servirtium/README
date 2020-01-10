@@ -1,8 +1,8 @@
 # General Architecture
 
-You're going to need a Recorder (to the markdown format), a replayer (from the markdown format), a server that can listen on a 
-socket and work with the recorder or replayer. In the case of the reader, the incoming requests are sent to the 'real' service too. 
-In the case of the replayer, the real service is not involved.  
+You're going to need a `Recorder` (to the markdown format), a `replayer` (from the markdown format), a `server` that can listen on a 
+socket and work with the recorder or replayer. In the case of the replayer, the incoming requests are sent to the 'real' service too. 
+In the case of the replayer, the "real service" is not involved.  
 
 # "Baby Steps" for a new language implementation
 
