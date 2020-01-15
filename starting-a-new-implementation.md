@@ -27,7 +27,10 @@ And the URLs you're trying to hit is `http://climatedataapi.worldbank.org/climat
  
 [See PlaybackClimateApiTests.java](https://github.com/servirtium/demo-java-climate-data-tck/blob/master/src/test/java/com/paulhammant/climatedata/PlaybackClimateApiTests.java) and the mocks that it uses for playback [in here](https://github.com/servirtium/demo-java-climate-data-tck/tree/master/src/test/mocks). In the Java version PlaybackClimateApiTests is a subclass of ClimateApiTests, but you may want to achieve the same thing in a different way.  This creates your fledgeling Servirtium.
 
-To be clear, the same tests have the ability to pass in "direct" (no Servirtium) and "playback" modes of operation
+To be clear, the same tests have the ability to pass in "direct" (no Servirtium) and "playback" modes of operation.
+
+Also of note that Servirtium's playback server is a deliberate man-in-the-middle - meaning that the climate-lib needs to invoke 
+services on http://localhost:61417/climateweb/rest/v1/ instead of http://climatedataapi.worldbank.org/climateweb/rest/v1/
 
 ## 3. Adding "record" mode
 
@@ -49,6 +52,12 @@ could be a good idea at this stage, as the climate tests are integration/service
 
 POST, PUT are needed too - unlike GET they have a request body. Maybe just do unit tests for this, as the library's build shouldn't be
 overly dependant on remote services.
+
+## 6 Proxy Server mode of operation
+
+This one varies per language and the HTTP request initiation available. Client calls to an arbitrary server, can be run through 
+a proxy server on the way there. Some commercial Service Virtualization techs like HoverFly work this way by design. For Servirtium 
+it is an option.  If mounted as a Proxy Server things are more magic-based. 
 
 # Prior implementations
 
