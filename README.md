@@ -1,6 +1,3 @@
-
-
-
 See [servirtium.dev/](https://servirtium.dev/) for:
 
 * About
@@ -13,7 +10,7 @@ See [servirtium.dev/](https://servirtium.dev/) for:
 * Example Projects
 * Blog
 
-# Videos about Servirtium's markdown
+# Videos on Servirtium and its markdown format
 
 There is a video of WorldBank's climate API being virtualized for testing with Servirtium-java here (12 mins):
 
@@ -31,7 +28,7 @@ Another video captures a day that service was flaky (2.5 mins):
 
 1. Java - [Servirtium-Java](https://github.com/servirtium/servirtium-java) (in this org) - ready to use
 2. Python - [Servirtium-Python](https://github.com/servirtium/servirtium-python) - alpha quality (help needed)
-3. Ruby - [Servirtium-Ruby](https://github.com/servirtium/servirtium-ruby) People wishing to lead development sought.
+3. Ruby - [Servirtium-Ruby](https://github.com/servirtium/servirtium-ruby) Not started yet - we're still making the demo below
 4. Go - People wishing to lead development sought.
 5. C# - People wishing to lead development sought.
 6. Node.JS - People wishing to lead development sought.
@@ -42,9 +39,9 @@ We're also looking to existing *Service Virtualization* frameworks/libs to suppo
 
 # Demo Projects in this GitHub org
 
-1. Java - [demo-java-climate-data-tck](https://github.com/servirtium/demo-java-climate-data-tck)
-2. Python - [demo-python-climate-data-tck](https://github.com/servirtium/demo-python-climate-data-tck)
-3. Ruby - TODO
+1. Java - [demo-java-climate-tck](https://github.com/servirtium/demo-java-climate-tck) - complete
+2. Python - [demo-python-climate-tck](https://github.com/servirtium/demo-python-climate-tck) - nearly complete
+3. Ruby - [demo-ruby-climate-tck](https://github.com/servirtium/demo-ruby-climate-tck) - in progress
 4. .NET - TODO
 5. NodeJS - TODO
 6. Go - TODO
