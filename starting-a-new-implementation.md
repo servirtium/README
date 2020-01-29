@@ -4,7 +4,7 @@ You're going to need a `Recorder` (to the markdown format), a `replayer` (from t
 socket and work with the recorder or replayer. In the case of the replayer, the incoming requests are sent to the 'real' service too. 
 In the case of the replayer, the "real service" is not involved.  
 
-# "Baby Steps" for a new language implementation
+# How to start new language implementation
 
 This is the suggested way of building Servirtium for a new language as it is methodical. That's useful because you may 
 have to pause your development of this and restart later.
