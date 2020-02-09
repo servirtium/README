@@ -12,16 +12,14 @@ have to pause your development of this and restart later.
 Steps:
 
 ## 1. Start with an implementation of "direct" with tests
- 
-In the Java demo that utilizes the World-Bank's Climate API [take a look at ClimateApiTests.java](https://github.com/servirtium/demo-java-climate-tck/blob/master/src/test/java/com/paulhammant/climatedata/ClimateApiTests.java). Obviously not JUnit for your language, but PyTest, RSpec, Jasmine, NUnit (etc) instead. 
 
-Here's the sum total of the "direct" tests from the Python testbase:
+Here's the the "direct" tests you want to (from the Python testbase):
 
-![image](https://user-images.githubusercontent.com/82182/71445595-c2d73600-2712-11ea-8e68-81cefac5b9fa.png)
+![image](tests.png)
 
 (Source for that: https://github.com/servirtium/demo-python-climate-tck/blob/master/src/test/TestClimateApi.py)
 
-And the URLs you're trying to hit is `http://climatedataapi.worldbank.org/climateweb/rest/v1/country/annualavg/pr/{fromCCYY}/{toCCYY}/{countryISO}.xml`. Yes, the 'gbr+fra' test hits the HTTP api twice (yes that breaks the facade pattern, but this is just a test harness for Servirtium).
+And the URLs you're trying to hit is `http://climatedataapi.worldbank.org/climateweb/rest/v1/country/annualavg/pr/{fromCCYY}/{toCCYY}/{countryISO}.xml`. 
 
 ## 2. Implement the "playback" for the same test cases
  
@@ -43,17 +41,26 @@ To be clear, the same tests have the ability to pass in "direct" (no Servirtium)
 
 Success is where the recording doesn't change regardless of how many time you run the tests (overwriting the .md files in tests/mocks/ (or whatever you have as that directory in Git)
 
-## 4. Extract the library from the climate demo, to its own repo
+## 4. Add second and subsequent interaction handling
+
+For direct tests (as well as Servirtium record and playback), add the possibility of calculating averages for more than one 
+country code. Here's the Python test for that.
+
+![image](gbr-fra.png)
+
+Yes, the 'gbr+fra' test hits the HTTP api twice (yes that breaks the facade pattern, but this is just a test harness for Servirtium).
+
+## 5. Extract the library from the climate demo, to its own repo
 
 This is so that others could use the library. The demo project needs to be able to acquire the package, of course.  Pure unit tests
 could be a good idea at this stage, as the climate tests are integration/service tests.
 
-## 5 Other HTTP verbs other than 'GET'
+## 6. Other HTTP verbs other than 'GET'
 
 POST, PUT are needed too - unlike GET they have a request body. Maybe just do unit tests for this, as the library's build shouldn't be
 overly dependant on remote services.
 
-## 6 Add a capability for a "Note".
+## 7. Add a capability for a "Note".
 
 The testing tech, can add a note for the next interaction, which will appear in the markdown. It's a record only thing as Playback 
 ignores it. This serves as a rudimentary comment system for HUMANS (though somebody's bound to try to put YAML in there at some point):
@@ -71,11 +78,26 @@ And every where that Mary went
 ### Request headers recorded for playback:
 ```
 
-## 7 Proxy Server mode of operation
+## 8. Redaction / Mask / Mutate operations
+
+Sometimes things have to be changed in request headers and/or request body that is saved as markdown in a recording
+Similarly things may have to be changed in response headers and/or response body.  
+
+Related things that were recorded in a certain way, may have to be changed again in playback. You might have morphed 
+`Date: Wed, 21 Oct 2019 07:28:00 GMT` to `Date: todays's-date-paul-was-here` for the purposes of the recording, but
+in playback it needs to be changed again from `Date: todays's-date-paul-was-here` to `Date: Sun, 9 Feb 2020 11:18:03 GMT` 
+so that tests still pass.
+
+Then there's also removal of headers (and parts of a body) at both request and response level, that's needed.
+
+For any of these it may be a good idea to get regex and non regex ways working.
+
+## 9. Proxy Server mode of operation
 
 This one varies per language and the HTTP request initiation available. Client calls to an arbitrary server, can be run through 
 a proxy server on the way there. Some commercial Service Virtualization techs like HoverFly work this way by design. For Servirtium 
-it is an option.  If mounted as a Proxy Server things are more magic-based. 
+it is an option.  If mounted as a Proxy Server technologies that would call over the wire may not be specifically configured 
+for it.
 
 # Prior implementations
 
