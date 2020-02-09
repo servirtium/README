@@ -78,7 +78,7 @@ And every where that Mary went
 ### Request headers recorded for playback:
 ```
 
-## 8. Redaction / Mask / Mutate operations
+## 8. Redaction, Mask, and Mutate operations
 
 Sometimes things have to be changed in request headers and/or request body that is saved as markdown in a recording
 Similarly things may have to be changed in response headers and/or response body.  
@@ -98,6 +98,11 @@ This one varies per language and the HTTP request initiation available. Client c
 a proxy server on the way there. Some commercial Service Virtualization techs like HoverFly work this way by design. For Servirtium 
 it is an option.  If mounted as a Proxy Server technologies that would call over the wire may not be specifically configured 
 for it.
+
+## 10. Alternate code block
+
+The three backtick way of marking code blocks in markdown, has an alternate: indented by four spaces.
+That should be supported too - and should be an option in recording mode, with playback mode just adapting.
 
 # Prior implementations
 
