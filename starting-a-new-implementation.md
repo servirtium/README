@@ -41,6 +41,8 @@ Note too that in order to stay "in process" with this step you're going to have 
 some multi-threaded or async capability to allow a test suite to issue GETs through the library 
 you have HTTP chosen and simultaneously some HTTP server to listen on a socket to satisfy that GET.
 
+<img src="https://raw.github.com/servirtium/README/master/2.svg?sanitize=true">
+
 ## 3. Adding "record" mode
 
 You should have the hang of this now :)
@@ -56,6 +58,8 @@ Success is where the recording doesn't change regardless of how many time you ru
 
 Note that this step requires the recording HTTP server to issue GETs to the real service for each 
 request. That makes the recorder a "Man in the middle" (MITM). 
+
+<img src="https://raw.github.com/servirtium/README/master/3.svg?sanitize=true">
 
 ## 4. Add second and subsequent interaction handling
 
