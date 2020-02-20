@@ -9,13 +9,14 @@ In the case of the replayer, the "real service" is not involved.
 # How to start new language implementation
 
 This is the suggested way of building Servirtium for a new language as it is methodical. That's useful because you may 
-have to pause your development of this and restart later.
+have to pause your development of this and restart later. So we're going to this in many small steps. The first isn't 
+even about Servirtium at all.
 
 Steps:
 
-## 1. Start with an implementation of "direct" with tests
+## 1. Write a simple API class with tests
 
-Here's the the "direct" tests you want to (from the Python testbase):
+Here's the the tests you want to pass (from the Python testbase - need porting to the language in question):
 
 ![image](tests.png)
 
@@ -23,13 +24,13 @@ Here's the the "direct" tests you want to (from the Python testbase):
 
 And the URLs you're trying to hit is `http://climatedataapi.worldbank.org/climateweb/rest/v1/country/annualavg/pr/{fromCCYY}/{toCCYY}/{countryISO}.xml`. 
 
-Note that there is nothing of Servirtium in this step - this is just creation of a test harness 
+Note that there is nothing of "Servirtium" in this step - this is just creation of a test harness 
 in your language's preferred test runner (and following best practices including separation of 
-prod code and test code).
+prod code and test code, and a build script if necessary).
 
 <img src="https://raw.github.com/servirtium/README/master/1.svg?sanitize=true">
 
-## 2. Implement the "playback" for the same test cases
+## 2. Implement a rudimentary "playback" for the same test cases
  
 [See PlaybackClimateApiTests.java](https://github.com/servirtium/demo-java-climate-tck/blob/master/src/test/java/com/paulhammant/climatedata/PlaybackClimateApiTests.java) and the mocks that it uses for playback [in here](https://github.com/servirtium/demo-java-climate-tck/tree/master/src/test/mocks). In the Java version PlaybackClimateApiTests is a subclass of ClimateApiTests, but you may want to achieve the same thing in a different way.  This creates your fledgeling Servirtium.
 
@@ -45,7 +46,7 @@ you have HTTP chosen and simultaneously some HTTP server to listen on a socket t
 
 <img src="https://raw.github.com/servirtium/README/master/2.svg?sanitize=true">
 
-## 3. Adding "record" mode
+## 3. Adding "record" mode to what you have
 
 You should have the hang of this now :)
 
