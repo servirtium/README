@@ -87,8 +87,12 @@ are integration/service tests.
 
 ## 6. Other HTTP verbs other than 'GET'
 
-POST, PUT are needed too - unlike GET they have a request body. Maybe just do unit tests for this, 
-as the library's build shouldn't be overly dependant on remote services.
+POST, PUT, HEAD, DELETE, OPTIONS, TRACE and PATCH are needed too. Unlike GET they have a request body, 
+but that is pretty much the only difference. Maybe just do unit tests for these, as the extracted 
+library's build shouldn't be dependant on remote services.
+
+Some HTTP socket-listener libraries don't have a generic handler for all verbs, and instead have specific 
+onGET & onPOST style methods/functionals. Meaning there's a little more copy/paste than you'd wish for.
 
 ## 7. Add a capability for a "Note".
 
