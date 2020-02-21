@@ -31,18 +31,20 @@ prod code and test code, and a build script if necessary).
 <img src="https://raw.github.com/servirtium/README/master/1.svg?sanitize=true">
 
 ## 2. Implement a rudimentary "playback" for the same test cases
+
+**This step creates a fledgeling Servirtium**
+
+A playback Servertium (in the testbase) should be able to respond as the WorkdBank's climate web-api would for the same calls, and the new (derived or extended) tests should work offline just fine.
  
-[See PlaybackClimateApiTests.java](https://github.com/servirtium/demo-java-climate-tck/blob/master/src/test/java/com/paulhammant/climatedata/PlaybackClimateApiTests.java) and the mocks that it uses for playback [in here](https://github.com/servirtium/demo-java-climate-tck/tree/master/src/test/mocks). In the Java version PlaybackClimateApiTests is a subclass of ClimateApiTests, but you may want to achieve the same thing in a different way.  This creates your fledgeling Servirtium.
+[See PlaybackClimateApiTests.java](https://github.com/servirtium/demo-java-climate-tck/blob/master/src/test/java/com/paulhammant/climatedata/PlaybackClimateApiTests.java) from the Java version and the mocks that it uses for playback [in here](https://github.com/servirtium/demo-java-climate-tck/tree/master/src/test/mocks). In the Java version PlaybackClimateApiTests is a subclass of ClimateApiTests, but you may want to achieve the same thing in a different way.  
 
-To be clear, the same tests have the ability to pass in "direct" (no Servirtium) and "playback" modes of operation.
+Or [see TestPlaybackClimateApi.py](https://github.com/servirtium/demo-python-climate-tck/blob/master/src/test/TestPlaybackClimateApi.py) and the mocks that it uses for playback [in here](https://github.com/servirtium/demo-python-climate-tck/tree/master/src/mocks). The content of mocks for the Python version should be the same as the content for the Java version, even if the file names/paths are slightly different.
 
-Note that Servirtium's playback server is a deliberate man-in-the-middle - meaning that the 
-climate-lib needs to invoke services on http://localhost:61417/climateweb/rest/v1/ 
-instead of http://climatedataapi.worldbank.org/climateweb/rest/v1/
+To be clear, the same five tests have the ability to pass in "direct" (no Servirtium) and "playback" modes of operation.
 
 Note too that in order to stay "in process" with this step you're going to have to leverage 
 some multi-threaded or async capability to allow a test suite to issue GETs through the library 
-you have HTTP chosen and simultaneously some HTTP server to listen on a socket to satisfy that GET.
+you have HTTP chosen and simultaneously some HTTP "servierium server" to listen on a socket to satisfy that GET. Constraint is: no process spawning.
 
 <img src="https://raw.github.com/servirtium/README/master/2.svg?sanitize=true">
 
@@ -59,8 +61,11 @@ and "record" modes of operation.
 Success is where the recording doesn't change regardless of how many time you run the tests 
 (overwriting the .md files in tests/mocks/ (or whatever you have as that directory in Git)
 
-Note that this step requires the recording HTTP server to issue GETs to the real service for each 
-request. That makes the recorder a "Man in the middle" (MITM). 
+Note that Servirtium's record server is a deliberate man-in-the-middle - meaning that the 
+climate-lib needs to invoke services on http://localhost:61417/climateweb/rest/v1/ 
+instead of http://climatedataapi.worldbank.org/climateweb/rest/v1/. Specifically, the climate API test-harness 
+needs to be configurable to choose the base domain name / port. A constructor arg is a good way to specify that, 
+but language idioms differ.
 
 <img src="https://raw.github.com/servirtium/README/master/3.svg?sanitize=true">
 
