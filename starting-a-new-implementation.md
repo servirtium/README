@@ -127,14 +127,7 @@ Then there's also removal of headers (and parts of a body) at both request and r
 
 For any of these it may be a good idea to get regex and non regex ways working.
 
-## 9. Proxy Server mode of operation
-
-This one varies per language and the HTTP request initiation available. Client calls to an arbitrary server, can be run through 
-a proxy server on the way there. Some commercial Service Virtualization techs like HoverFly work this way by design. For Servirtium 
-it is an option.  If mounted as a Proxy Server technologies that would call over the wire may not be specifically configured 
-for it.
-
-## 10. Optional Markdown Settings
+## 9. Optional Markdown Settings
 
 ### Alternate code block
 
@@ -148,6 +141,18 @@ you're building
 GET and POST may be in the markdown as emphasised like *GET* or *POST* (asterisk or underscore before & after the word in the 
 markdown). This should be optional too via a recorder method like `emphasizeHttpVerbs()` (or similar). The Playback mode should 
 just adapt to what it encounters.
+
+## 10. Publish to package/module-land for your lang family
+
+That's Maven-central, pub-dev, cpan etc.
+
+## 11. Proxy Server mode of operation
+
+This one varies per language and the HTTP request initiation available. Client calls to an arbitrary server, can be run through 
+a proxy server on the way there. Some commercial Service Virtualization techs like HoverFly work this way by design. For Servirtium 
+it is an option.  If mounted as a Proxy Server technologies that would call over the wire may not be specifically configured 
+for it.
+
 
 # Notes on prior implementations
 
