@@ -3,7 +3,7 @@ Main Servirtium site: https://servirtium.dev
 # General Architecture
 
 You're going to need a `Recorder` (to the markdown format), a `replayer` (from the markdown format), a `server` that can listen on a 
-socket and work with the recorder or replayer. In the case of the replayer, the incoming requests are sent to the 'real' service too. 
+socket and work with the recorder or replayer. In the case of the recorder ("man in the middle"), the incoming requests are sent to the 'real' service too. 
 In the case of the replayer, the "real service" is not involved.  
 
 # How to start new language implementation
