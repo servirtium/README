@@ -87,9 +87,9 @@ are integration/service tests.
 
 ## 6. Other HTTP verbs other than 'GET'
 
-POST, PUT, HEAD, DELETE, OPTIONS, TRACE and PATCH are needed too. Unlike GET they have a request body, 
+POST, PUT, HEAD, DELETE, OPTIONS, TRACE and PATCH are needed too. Unlike GET, they have a request body, 
 but that is pretty much the only difference. Maybe just do unit tests for these, as the extracted 
-library's build shouldn't be dependant on remote services.
+library's build shouldn't be dependent on remote services.
 
 Some HTTP socket-listener libraries don't have a generic handler for all verbs, and instead have specific 
 onGET & onPOST style methods/functionals. Meaning there's a little more copy/paste than you'd wish for.
@@ -134,7 +134,7 @@ For any of these it may be a good idea to get regex and non regex ways working.
 The three backtick way of marking code blocks in markdown, has an alternate: indented by four spaces.
 That should be supported too - and should be an option in recording mode, with playback mode just adapting to what it 
 encounters. A method/function on the recorder could be `indentCodeBlocks()` whatever is idiomatic for the style of API 
-you're building
+you are building.
 
 ### Emphasis for HTTP verb/method
 
@@ -142,17 +142,31 @@ GET and POST may be in the markdown as emphasised like *GET* or *POST* (asterisk
 markdown). This should be optional too via a recorder method like `emphasizeHttpVerbs()` (or similar). The Playback mode should 
 just adapt to what it encounters.
 
-## 10. Publish to package/module-land for your lang family
+## 10 Fail a playback step if the request is not as previously recorded
 
-That's Maven-central, pub-dev, cpan etc.
+That is any of URL, method, request header, or request body. If they are different in playback than 
+they were in the prior recordings then servertium's playback needs to deliberately fail. If the recorder has a 
+mechanism to alpha-sort or redact headers/bodies, then the playback side also needed that. Pretty-print too. 
+Otherwise and "is different" determination will do false positives.
 
-## 11. Proxy Server mode of operation
+Close of socket is an admirable way to communicate failure. 
+
+Serverium should make the **reason** for the failure available to the test runner. The only
+reasonable way to do that is inform the test-runner technology of the reason when/if the test runner asks.  So
+the the same way there is a `setContext(string)` method/function from the point of view of the test runner,
+there should also be a `getLastError()` mechanism to pull the failure details back to the test runner and 
+inform the developer. That could be via an "after" test mechanism (after each, not after all/suite).
+
+## 11. Publish to package/module-land for your language family
+
+That's "Maven central", pub.dev, cpan, RubyGems, NuGet-land etc.
+
+## 12. Proxy Server mode of operation
 
 This one varies per language and the HTTP request initiation available. Client calls to an arbitrary server, can be run through 
 a proxy server on the way there. Some commercial Service Virtualization techs like HoverFly work this way by design. For Servirtium 
 it is an option.  If mounted as a Proxy Server technologies that would call over the wire may not be specifically configured 
 for it.
-
 
 # Notes on prior implementations
 
