@@ -27,11 +27,12 @@ Another video captures a day that service was flaky (2.5 mins):
 # Language Implementations in this GitHub org
 
 1. Java - [Servirtium-Java](https://github.com/servirtium/servirtium-java) (in this org) - ready to use
-2. Python - [Servirtium-Python](https://github.com/servirtium/servirtium-python) - alpha quality (help needed)
-3. Ruby - [Servirtium-Ruby](https://github.com/servirtium/servirtium-ruby) Not started yet - we're still making the demo below
-4. Go - People wishing to lead development sought.
-5. C# - People wishing to lead development sought.
-6. Node.JS - People wishing to lead development sought.
+2. Kotlin - [HTTP4's Servirtium lib](https://www.http4k.org/guide/modules/servicevirtualisation/) (external) - ready to use
+3. Python - [Servirtium-Python](https://github.com/servirtium/servirtium-python) - alpha quality (help needed)
+4. Ruby - [Servirtium-Ruby](https://github.com/servirtium/servirtium-ruby) - nearly complete
+5. Go - People wishing to lead development sought.
+6. C# - [servirtium-dotnet](https://github.com/servirtium/servirtium-dotnet) - ready to use
+7. Node.JS - Watch this space
 
 If you want to start one of these then read [starting a new implementation](starting-a-new-implementation.md)
 
@@ -40,8 +41,9 @@ We're also looking to existing *Service Virtualization* frameworks/libs to suppo
 # Demo Projects in this GitHub org
 
 1. Java - [demo-java-climate-tck](https://github.com/servirtium/demo-java-climate-tck) - complete
-2. Python - [demo-python-climate-tck](https://github.com/servirtium/demo-python-climate-tck) - nearly complete
-3. Ruby - [demo-ruby-climate-tck](https://github.com/servirtium/demo-ruby-climate-tck) - in progress
-4. .NET - TODO
-5. NodeJS - TODO
-6. Go - TODO
+2. Kotlin - [servirtium-demo-kotlin-climate-tck](https://github.com/http4k/servirtium-demo-kotlin-climate-tck) - complete
+3. Python - [demo-python-climate-tck](https://github.com/servirtium/demo-python-climate-tck) - nearly complete
+4. Ruby - [demo-ruby-climate-tck](https://github.com/servirtium/demo-ruby-climate-tck) - nearly complete
+5. .NET - [demo-dotnet-climate-tck](https://github.com/servirtium/demo-dotnet-climate-tck) - complete
+6. NodeJS - [demo-javascript-climate-tck](https://github.com/servirtium/demo-javascript-climate-tck) - in progress
+7. Go - TODO
