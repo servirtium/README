@@ -82,15 +82,17 @@ after-test:
 
 ## 5. Add second and subsequent interaction handling
 
-For direct tests (as well as Servirtium record and playback), add the possibility of calculating averages for more than one 
-country code. Here's the Python test for that.
+Each of the five tests done **so far** in the climate-api took a single country code.
+
+Change: For direct tests (as well as Servirtium record and playback), add the possibility of calculating averages for more than one 
+country code. That would be a list of countries. Here's the Python test for for a new test for 'gbr' and 'fra' rainfall average:
 
 ![image](gbr-fra.png)
 
-Yes, the 'gbr+fra' test hits the HTTP api twice. Yes, that breaks the facade pattern, but this is 
-just a test harness for Servirtium.
+Yes, the 'gbr+fra' test hits the WordBank climate web-api twice. Yes, that breaks the facade pattern, but this is 
+just a **test harness** for Servirtium.
 
-In the Markdown grammar, there's an interaction number that shows the order of the TWO interactions (one for 'gbr' and one for 'fra')
+In the Markdown grammar, there's an interaction number that shows the order of the **TWO** interactions (one for 'gbr' and one for 'fra')
 
 ```
   ## Interaction 0: GET /climateweb/rest/v1/country/annualavg/pr/1980/1999/gbr.xml
@@ -99,6 +101,7 @@ In the Markdown grammar, there's an interaction number that shows the order of t
      ... request headers, request body, response headers, response body ...  
 ```
 
+Most likely your well-factored code makes it easy to record a series of interactions.
 
 ## 5. Extract the library from the climate demo, to its own repo
 
