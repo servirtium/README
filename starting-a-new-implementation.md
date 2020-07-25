@@ -69,7 +69,13 @@ but language idioms differ.
 
 <img src="https://raw.github.com/servirtium/README/master/3.svg?sanitize=true">
 
-## 4. Add a test that fails if theres a 'git diff
+## 4. Make the recording test fail if the recording is different to what it was previously.
+
+Store the recording previously made (unless there is no prior recording) for each test. When the test completes, check if the recording is different and fail the test if it is different. Just do this in memory and as each test executes.
+
+```
+servirtiumRecorder.failIfMarkdownIsDiffentToLastRecording()
+```
 
 ## 5. Add second and subsequent interaction handling
 
