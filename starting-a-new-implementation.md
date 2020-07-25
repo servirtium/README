@@ -69,12 +69,12 @@ but language idioms differ.
 
 <img src="https://raw.github.com/servirtium/README/master/3.svg?sanitize=true">
 
-## 4. Make the recording test fail if the recording is different to what it was previously.
+## 4. Make the recording of a test fail if it is different to what it was previously.
 
-Store the recording previously made (unless there is no prior recording) for each test. When the test completes, check if the recording is different and fail the test if it is different. Just do this in memory and as each test executes.
+Store the whole recording previously made (unless there is no prior recording) for each test. When the test completes, check if the whole recording is different and fail the test if it is. Just do this in memory and as each test executes. 
 
 ```
-servirtiumRecorder.failIfMarkdownIsDiffentToLastRecording()
+servirtiumRecorder.failIfMarkdownIsDifferentToPreviousRecording()
 ```
 
 ## 5. Add second and subsequent interaction handling
@@ -86,6 +86,15 @@ country code. Here's the Python test for that.
 
 Yes, the 'gbr+fra' test hits the HTTP api twice. Yes, that breaks the facade pattern, but this is 
 just a test harness for Servirtium.
+
+In the Markdown grammar, there's an interaction number that shows the order of the TWO interactions:
+
+```
+  ## Interaction 0: GET /climateweb/rest/v1/country/annualavg/pr/1980/1999/gbr.xml
+     ... etc ...
+  ## Interaction 1: GET /climateweb/rest/v1/country/annualavg/pr/1980/1999/fra.xml
+```
+
 
 ## 5. Extract the library from the climate demo, to its own repo
 
@@ -152,7 +161,7 @@ just adapt to what it encounters.
 
 ## 10 Fail a playback step if the request is not as previously recorded
 
-That is any of URL, method, request header, or request body. If they are different in playback than 
+That is any of **URL**, **method**, **request header**, or **request body**. If they are different in playback than 
 they were in the prior recordings then servertium's playback needs to deliberately fail. If the recorder has a 
 mechanism to alpha-sort or redact headers/bodies, then the playback side also needed that. Pretty-print too. 
 Otherwise and "is different" determination will do false positives.
