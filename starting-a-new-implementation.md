@@ -74,7 +74,10 @@ but language idioms differ.
 Store the whole recording previously made (unless there is no prior recording) for each test. When the test completes, check if the whole recording is different and fail the test if it is. Just do this in memory and as each test executes. 
 
 ```
-servirtiumRecorder.failIfMarkdownIsDifferentToPreviousRecording()
+test:  
+    as it is now - calling the climate API for average rainfall with parameters
+after-test:
+    servirtiumRecorder.failIfMarkdownIsDifferentToPreviousRecording()
 ```
 
 ## 5. Add second and subsequent interaction handling
@@ -87,12 +90,13 @@ country code. Here's the Python test for that.
 Yes, the 'gbr+fra' test hits the HTTP api twice. Yes, that breaks the facade pattern, but this is 
 just a test harness for Servirtium.
 
-In the Markdown grammar, there's an interaction number that shows the order of the TWO interactions:
+In the Markdown grammar, there's an interaction number that shows the order of the TWO interactions (one for 'gbr' and one for 'fra')
 
 ```
   ## Interaction 0: GET /climateweb/rest/v1/country/annualavg/pr/1980/1999/gbr.xml
-     ... etc ...
+     ... request headers, request body, response headers, response body ...
   ## Interaction 1: GET /climateweb/rest/v1/country/annualavg/pr/1980/1999/fra.xml
+     ... request headers, request body, response headers, response body ...  
 ```
 
 
