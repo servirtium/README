@@ -84,7 +84,7 @@ after-test:
 
 Each of the five tests done **so far** in the climate-api took a single country code.
 
-Change: For direct mode tests (as well as Servirtium record and playback modes), add the possibility of calculating averages for more than one 
+Change: For **direct mode** tests (as well as Servirtium **record** and **playback** modes), add the possibility of calculating averages for more than one 
 country code. That would be a list of countries. Here's the Python test for for a new test for 'gbr' and 'fra' rainfall average:
 
 ![image](gbr-fra.png)
