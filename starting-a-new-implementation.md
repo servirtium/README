@@ -84,7 +84,7 @@ after-test:
 
 Each of the five tests done **so far** in the climate-api took a single country code.
 
-Change: For direct tests (as well as Servirtium record and playback), add the possibility of calculating averages for more than one 
+Change: For direct mode tests (as well as Servirtium record and playback modes), add the possibility of calculating averages for more than one 
 country code. That would be a list of countries. Here's the Python test for for a new test for 'gbr' and 'fra' rainfall average:
 
 ![image](gbr-fra.png)
@@ -101,13 +101,14 @@ In the Markdown grammar, there's an interaction number that shows the order of t
      ... request headers, request body, response headers, response body ...  
 ```
 
-Most likely your well-factored code makes it easy to record a series of interactions.
+**Most likely your well-factored code makes it easy to record a series of interactions.**
 
 ## 5. Extract the library from the climate demo, to its own repo
 
 This is so that others could use the library. The demo project needs to be able to acquire the 
-package, of course.  Pure unit tests could be a good idea at this stage, as the climate tests 
-are integration/service tests.
+package, of course. The workdbank service tests should stay with the `demo-xxx-climate-tck` 
+repo. Indeed the library tests should not reference WorldBank at all. New pure unit tests 
+could be a good idea at this stage - in the new library repo.
 
 ## 6. Other HTTP verbs other than 'GET'
 
