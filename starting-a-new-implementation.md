@@ -137,6 +137,8 @@ For any of these it may be a good idea to get regex and non regex ways working.
 
 You'll note that the recording generates many differences between recordings (back to back). That is a good list of things to check off for mutation, mask, redaction, deletion.
 
+You'll also note that some of the same Redaction, Mask, Delete, and Mutate operations should be in playback. Or perhaps: un_redact, un_mask, un_mutate.
+
 ## 9. Add a capability for a "Note".
 
 The testing tech, can add a note for the next interaction, which will appear in the markdown. It's 
