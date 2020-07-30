@@ -103,14 +103,14 @@ In the Markdown grammar, there's an interaction number that shows the order of t
 
 **Most likely your well-factored code makes it easy to record a series of interactions.**
 
-## 5. Extract the library from the climate demo, to its own repo
+## 6. Extract the library from the climate demo, to its own repo
 
 This is so that others could use the library. The demo project needs to be able to acquire the 
 package, of course. The workdbank service tests should stay with the `demo-xxx-climate-tck` 
 repo. Indeed the library tests should not reference WorldBank at all. New pure unit tests 
 could be a good idea at this stage - in the new library repo.
 
-## 6. Other HTTP verbs other than 'GET'
+## 7. Other HTTP verbs other than 'GET'
 
 POST, PUT, HEAD, DELETE, OPTIONS, TRACE and PATCH are needed too. Unlike GET, they have a request body, 
 but that is pretty much the only difference. Maybe just do unit tests for these, as the extracted 
@@ -119,7 +119,25 @@ library's build shouldn't be dependent on remote services.
 Some HTTP socket-listener libraries don't have a generic handler for all verbs, and instead have specific 
 onGET & onPOST style methods/functionals. Meaning there's a little more copy/paste than you'd wish for.
 
-## 7. Add a capability for a "Note".
+This step is on the library only, not the climate-demo.
+
+## 8. Redaction, Mask, Delete, and Mutate operations
+
+Sometimes things have to be changed in request headers and/or request body that is saved as markdown in a recording
+Similarly things may have to be changed in response headers and/or response body.  
+
+Related things that were recorded in a certain way, may have to be changed again in playback. You might have morphed 
+`Date: Wed, 21 Oct 2019 07:28:00 GMT` to `Date: todays's-date-paul-was-here` for the purposes of the recording, but
+in playback it needs to be changed again from `Date: todays's-date-paul-was-here` to `Date: Sun, 9 Feb 2020 11:18:03 GMT` 
+so that tests still pass.
+
+Then there's also removal of headers (and parts of a body) at both request and response level, that's needed.
+
+For any of these it may be a good idea to get regex and non regex ways working.
+
+You'll note that the recording generates many differences between recordings (back to back). That is a good list of things to check off for mutation, mask, redaction, deletion.
+
+## 9. Add a capability for a "Note".
 
 The testing tech, can add a note for the next interaction, which will appear in the markdown. It's 
 a record only thing as Playback ignores it. This serves as a rudimentary comment system for 
@@ -138,35 +156,6 @@ And every where that Mary went
 ### Request headers recorded for playback:
 ```
 
-## 8. Redaction, Mask, and Mutate operations
-
-Sometimes things have to be changed in request headers and/or request body that is saved as markdown in a recording
-Similarly things may have to be changed in response headers and/or response body.  
-
-Related things that were recorded in a certain way, may have to be changed again in playback. You might have morphed 
-`Date: Wed, 21 Oct 2019 07:28:00 GMT` to `Date: todays's-date-paul-was-here` for the purposes of the recording, but
-in playback it needs to be changed again from `Date: todays's-date-paul-was-here` to `Date: Sun, 9 Feb 2020 11:18:03 GMT` 
-so that tests still pass.
-
-Then there's also removal of headers (and parts of a body) at both request and response level, that's needed.
-
-For any of these it may be a good idea to get regex and non regex ways working.
-
-## 9. Optional Markdown Settings
-
-### Alternate code block
-
-The three backtick way of marking code blocks in markdown, has an alternate: indented by four spaces.
-That should be supported too - and should be an option in recording mode, with playback mode just adapting to what it 
-encounters. A method/function on the recorder could be `indentCodeBlocks()` whatever is idiomatic for the style of API 
-you are building.
-
-### Emphasis for HTTP verb/method
-
-GET and POST may be in the markdown as emphasised like *GET* or *POST* (asterisk or underscore before & after the word in the 
-markdown). This should be optional too via a recorder method like `emphasizeHttpVerbs()` (or similar). The Playback mode should 
-just adapt to what it encounters.
-
 ## 10 Fail a playback step if the request is not as previously recorded
 
 That is any of **URL**, **method**, **request header**, or **request body**. If they are different in playback than 
@@ -182,11 +171,29 @@ the the same way there is a `setContext(string)` method/function from the point 
 there should also be a `getLastError()` mechanism to pull the failure details back to the test runner and 
 inform the developer. That could be via an "after" test mechanism (after each, not after all/suite).
 
-## 11. Publish to package/module-land for your language family
+
+## 11. Optional Markdown Settings
+
+### Alternate code block
+
+The three backtick way of marking code blocks in markdown, has an alternate: indented by four spaces.
+That should be supported too - and should be an option in recording mode, with playback mode just adapting to what it 
+encounters. A method/function on the recorder could be `indentCodeBlocks()` whatever is idiomatic for the style of API 
+you are building.
+
+### Emphasis for HTTP verb/method
+
+GET and POST may be in the markdown as emphasised like *GET* or *POST* (asterisk or underscore before & after the word in the 
+markdown). This should be optional too via a recorder method like `emphasizeHttpVerbs()` (or similar). The Playback mode should 
+just adapt to what it encounters.
+
+## 12. Publish to package/module-land for your language family
 
 That's "Maven central", pub.dev, cpan, RubyGems, NuGet-land etc.
 
-## 12. Proxy Server mode of operation
+Paul will need to be added to the list of authorized publishers / adminsistrators of the package if an official "https://github.com/servirtium/*" project/repo.
+
+## 13. Proxy Server mode of operation
 
 This one varies per language and the HTTP request initiation available. Client calls to an arbitrary server, can be run through 
 a proxy server on the way there. Some commercial Service Virtualization techs like HoverFly work this way by design. For Servirtium 
@@ -195,7 +202,7 @@ for it.
 
 # Notes on prior implementations
 
-If you're making a new impl, you don't actually have to understand the architecture of previous implementations. Indeed, your impl may be better for not being educated on prior implementations.
+If you're making a new impl, you don't actually have to understand the architecture of previous implementations. Indeed, your impl may be better for **not** being educated on prior implementations.
 
 * [Java using Netty, Undertow and OKHttp libraries](java-version-architecture.md)
 
