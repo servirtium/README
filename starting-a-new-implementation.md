@@ -61,9 +61,12 @@ To be clear, the same five tests you already have the ability to pass in "direct
 
 Note too that in order to stay "in process" with this step you're going to have to leverage 
 some multi-threaded or async capability to allow a test suite to issue GETs through the library 
-you have HTTP chosen and simultaneously some HTTP "servierium server" to listen on a socket to satisfy that GET. Constraint is: no process spawning.
+you have HTTP chosen and simultaneously some HTTP "servirtium server" to listen on a socket to satisfy that GET. Constraint is: no process spawning.
 
 <img src="https://raw.github.com/servirtium/README/master/2.svg?sanitize=true">
+
+Notes:
+1. The server you're standing up should not have an SSL certificate or speak over HTTPS. 
 
 ## 3. Adding "record" mode to what you have
 
