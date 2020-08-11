@@ -16,9 +16,28 @@ Steps:
 
 ## 1. Write a simple API class with tests
 
-Here's the the tests you want to pass (from the Python testbase - need porting to the language in question):
+Here's the tests you want to pass (from the Python testbase - need porting to the language in question):
 
-![image](tests.png)
+```
+    def test_averageRainfallForGreatBritainFrom1980to1999Exists(self):
+        assert self.climateApi.getAveAnnualRainfall(1980, 1999, "gbr") == 988.8454972331015
+
+    def test_averageRainfallForFranceFrom1980to1999Exists(self):
+        assert self.climateApi.getAveAnnualRainfall(1980, 1999, "fra") == 913.7986955122727
+
+    def test_averageRainfallForEgyptFrom1980to1999Exists(self):
+        assert self.climateApi.getAveAnnualRainfall(1980, 1999, "egy") == 54.58587712129825
+
+    def test_averageRainfallForGreatBritainFrom1985to1995DoesNotExist(self):
+        with pytest.raises(AttributeError) as execinfo:
+            self.climateApi.getAveAnnualRainfall(1985, 1995, "gbr")
+        assert "date range 1985-1995 not supported" in execinfo.value.args[0]
+
+    def test_averageRainfallForMiddleEarthFrom1980to1999DoesNotExist(self):
+        with pytest.raises(AttributeError) as excinfo:
+            self.climateApi.getAveAnnualRainfall(1980, 1999, "mde")
+        assert "not recognized by climateweb" in excinfo.value.args[0]
+```
 
 (Source for that: https://github.com/servirtium/demo-python-climate-tck/blob/master/src/test/TestClimateApi.py)
 
@@ -87,9 +106,13 @@ If thee no prior recording, skip this step and just write the markdown to the fi
 Each of the five tests done **so far** in the climate-api took a single country code.
 
 Change: For **direct mode** tests (as well as Servirtium **record** and **playback** modes), add the possibility of calculating averages for more than one 
-country code. That would be a list of countries. Here's the Python test for for a new test for 'gbr' and 'fra' rainfall average:
+country code. That would be a list of countries. Here's the Python test for for a new test for 'gbr' and 'fra' rainfall average (Python one again):
 
-![image](gbr-fra.png)
+```
+    def test_averageRainfallForGreatBritainAndFranceFrom1980to1999CanBeCalculatedFromTwoRequests(self):
+        rainfall = self.climateApi.getAveAnnualRainfall(1980, 1999, "gbr", "fra")
+        assert rainfall == 951.3220963726872
+```
 
 Yes, the 'gbr+fra' test hits the WordBank climate web-api twice. Yes, that breaks the facade pattern, but this is 
 just a **test harness** for Servirtium.
