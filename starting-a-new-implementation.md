@@ -39,8 +39,6 @@ Here's the tests you want to pass (from the Python testbase - need porting to th
         assert "not recognized by climateweb" in excinfo.value.args[0]
 ```
 
-(Source for that: https://github.com/servirtium/demo-python-climate-tck/blob/master/src/test/TestClimateApi.py)
-
 And the URLs you're trying to hit is `http://climatedataapi.worldbank.org/climateweb/rest/v1/country/annualavg/pr/{fromCCYY}/{toCCYY}/{countryISO}.xml`. 
 
 Note that there is nothing of "Servirtium" in this step - this is just creation of a test harness 
