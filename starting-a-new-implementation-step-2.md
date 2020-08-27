@@ -8,7 +8,7 @@ A playback Servirtium (in the testbase) should be able to respond as the WorkdBa
 
 Or [see TestPlaybackClimateApi.py](https://github.com/servirtium/demo-python-climate-tck/blob/master/src/test/TestPlaybackClimateApi.py) and the mocks that it uses for playback [in here](https://github.com/servirtium/demo-python-climate-tck/tree/master/src/mocks). The content of mocks for the Python version should be the same as the content for the Java version, even if the file names/paths are slightly different. An those mocks are checked into source-control alongside the tests, without being modified.
 
-To be clear, the same five tests you already have the ability to pass in "direct" (no Servirtium) and "playback" modes of operation. And these two sets of five should share code as much as possible (test inheritance or composition - are both good).
+To be clear, the same five tests you already have the ability to pass in "direct" (no Servirtium) **and** "playback" modes of operation. And these two sets of five should share code as much as possible (code reuse, test inheritance or composition - are both good). Ten tests in all.
 
 Note too that in order to stay "in process" with this step you're going to have to leverage 
 some multi-threaded or async capability to allow a test suite to issue GETs through the library 
@@ -18,3 +18,9 @@ you have HTTP chosen and simultaneously some HTTP "servirtium server" to listen 
 
 Notes:
 1. The server you're standing up should not have an SSL certificate or speak over HTTPS. 
+
+## Diagram of components/services
+
+![image](https://user-images.githubusercontent.com/82182/91485984-8a8c8680-e8a3-11ea-9b9e-bdefd657452d.png)
+
+Yes, Worldbank's web-API isn't involved in this step - the five new tests won't cause I/O to Worldbank.
