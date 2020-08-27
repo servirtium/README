@@ -1,4 +1,4 @@
-## 10 Fail a playback step if the request is not as previously recorded
+# Step 10. Fail a playback step if the request is not as previously recorded
 
 That is any of **URL**, **method**, **request header**, or **request body**. If they are different in playback than 
 they were in the prior recordings then servertium's playback needs to deliberately fail. If the recorder has a 

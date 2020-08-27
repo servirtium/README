@@ -1,4 +1,4 @@
-## 1. Write a simple API class with tests
+# Step 1. Write a simple API class with tests
 
 Here are the tests that you want to pass (pseudo code):
 

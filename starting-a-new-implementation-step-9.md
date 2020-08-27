@@ -1,4 +1,4 @@
-## 9. Add a capability for a "Note".
+# Step 9. Add a capability for a "Note".
 
 The testing tech, can add a note for the next interaction, which will appear in the markdown. It's 
 a record only thing as Playback ignores it. This serves as a rudimentary comment system for 

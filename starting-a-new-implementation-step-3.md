@@ -1,4 +1,4 @@
-## 3. Adding "record" mode to what you have
+# Step 3. Adding "record" mode to what you have
 
 You should have the hang of this now :)
 

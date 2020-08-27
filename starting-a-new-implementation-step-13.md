@@ -1,4 +1,4 @@
-## 13. Proxy Server mode of operation
+# Step 13. Proxy Server mode of operation
 
 This one varies per language and the HTTP request initiation available. Client calls to an arbitrary server, can be run through 
 a proxy server on the way there. Some commercial Service Virtualization techs like HoverFly work this way by design. For Servirtium 

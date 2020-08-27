@@ -1,4 +1,4 @@
-## 2. Implement a rudimentary "playback" for the same test cases
+# Step 2. Implement a rudimentary "playback" for the same test cases
 
 **This step creates a fledgeling Servirtium**
 

@@ -1,4 +1,4 @@
-## 12. Publish to package/module-land for your language family
+# Step 12. Publish to package/module-land for your language family
 
 That's "Maven central", pub.dev, cpan, RubyGems, NuGet-land etc.
 

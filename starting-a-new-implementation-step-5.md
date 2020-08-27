@@ -1,4 +1,4 @@
-## 5. Add second and subsequent interaction handling
+# Step 5. Add second and subsequent interaction handling
 
 Each of the five tests done **so far** in the climate-api took a single country code.
 

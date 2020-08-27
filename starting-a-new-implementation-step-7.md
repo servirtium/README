@@ -1,4 +1,4 @@
-## 7. Other HTTP verbs other than 'GET'
+# Step 7. Other HTTP verbs other than 'GET'
 
 POST, PUT, HEAD, DELETE, OPTIONS, TRACE and PATCH are needed too. Unlike GET, they have a request body, 
 but that is pretty much the only difference. Maybe just do unit tests for these, as the extracted 

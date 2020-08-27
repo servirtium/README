@@ -1,4 +1,4 @@
-## 11. Optional Markdown Settings
+# Step 11. Optional Markdown Settings
 
 ### Alternate code block
 
