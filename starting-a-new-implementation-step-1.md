@@ -28,3 +28,7 @@ in your language's preferred test runner (and following best practices including
 prod code and test code, and a build script if necessary).
 
 <img src="https://raw.github.com/servirtium/README/master/1.svg?sanitize=true">
+
+## Diagram of components/services
+
+![image](https://user-images.githubusercontent.com/82182/91485584-fb7f6e80-e8a2-11ea-98ff-f1116f1bf2b4.png)
