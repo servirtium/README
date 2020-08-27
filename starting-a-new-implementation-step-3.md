@@ -19,3 +19,7 @@ but language idioms differ.
 
 <img src="https://raw.github.com/servirtium/README/master/3.svg?sanitize=true">
 
+## Diagram of components/services
+
+![image](https://user-images.githubusercontent.com/82182/91487112-2c60a300-e8a5-11ea-8e3d-1311925b25c7.png)
+
