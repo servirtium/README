@@ -28,14 +28,14 @@ Perhaps:
 
 ```
 servirtium.recorderMuutations().callerRequest().addReplacement(fromRegex, To)
-servirtium.recorderMuutations().callerRequest().addHeaderRemoved(headerToRemove)
+servirtium.recorderMuutations().callerRequest().addHeaderRemoval(headerNameRegex)
 ```
 
 Or 
 
 ```
 servirtium.mutations().addReplacement(RECORDING_CALLER_REQUEST, fromRegex, To)
-servirtium.mutations().addHeaderRemoved(RECORDING_CALLER_REQUEST, headerToRemove)
+servirtium.mutations().addHeaderRemoval(RECORDING_CALLER_REQUEST, headerNameRegex)
 ```
 
 ### Mutation of Real Response
@@ -46,12 +46,32 @@ Perhaps:
 
 ```
 servirtium.recorderMuutations().realResponse().addReplacement(fromRegex, To)
-servirtium.recorderMuutations().realResponse().addHeaderRemoved(headerToRemove)
+servirtium.recorderMuutations().realResponse().addHeaderRemoval(headerNameRegex)
 ```
 
 Or 
 
 ```
 servirtium.mutations().addReplacement(RECORDING_REAL_RESPONSE, fromRegex, To)
-servirtium.mutations().addHeaderRemoved(RECORDING_REAL_RESPONSE, headerToRemove)
+servirtium.mutations().addHeaderRemoval(RECORDING_REAL_RESPONSE, headerNameRegex)
+```
+
+### Mutation of Real Response
+
+While the "real" needed real passwords and user IDs to function, playback does not. So "Authorization: <real details>" could be replacd with "Authorization: DUMMY_AUTH" and people who value you playback only don't care.
+
+![image](https://user-images.githubusercontent.com/82182/91493326-0e983b80-e8af-11ea-8cbc-91f959cc2d4f.png)
+
+Perhaps: 
+
+```
+servirtium.recorderMuutations().recordedResponse().addReplacement(fromRegex, To)
+servirtium.recorderMuutations().recordedResponse().addHeaderRemoval(headerNameRegex)
+```
+
+Or 
+
+```
+servirtium.mutations().addReplacement(RECORDED_RESPONSE, fromRegex, To)
+servirtium.mutations().addHeaderRemoval(RECORDED_RESPONSE, headerNameRegex)
 ```
