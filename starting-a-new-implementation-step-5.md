@@ -16,10 +16,12 @@ just a **test harness** for Servirtium.
 In the Markdown grammar, there's an interaction number that shows the order of the **TWO** interactions (one for 'gbr' and one for 'fra')
 
 ```
-  ## Interaction 0: GET /climateweb/rest/v1/country/annualavg/pr/1980/1999/gbr.xml
-     ... request headers, request body, response headers, response body ...
-  ## Interaction 1: GET /climateweb/rest/v1/country/annualavg/pr/1980/1999/fra.xml
-     ... request headers, request body, response headers, response body ...  
+## Interaction 0: GET /climateweb/rest/v1/country/annualavg/pr/1980/1999/gbr.xml
+   ... sections for: request headers, request body, response headers, response body ...
+## Interaction 1: GET /climateweb/rest/v1/country/annualavg/pr/1980/1999/fra.xml
+   ... sections for: request headers, request body, response headers, response body ...  
 ```
 
 **Most likely your well-factored code makes it easy to record a series of interactions.**
+
+There now should be 18 tests: 6 direct, 6 for record mode, and 6 for playback. Shared code should be a reality

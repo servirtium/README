@@ -15,3 +15,43 @@ For any of these it may be a good idea to get regex and non regex ways working.
 You'll note that the recording generates many differences between recordings (back to back). That is a good list of things to check off for mutation, mask, redaction, deletion.
 
 You'll also note that some of the same Redaction, Mask, Delete, and Mutate operations should be in playback. Or perhaps: un_redact, un_mask, un_mutate.
+
+## Diagram of components/services
+
+![image](https://user-images.githubusercontent.com/82182/91492094-ed365000-e8ac-11ea-908b-41908bded2a6.png)
+
+### Mutation of Caller Request
+
+![image](https://user-images.githubusercontent.com/82182/91492226-34244580-e8ad-11ea-8377-6273b112194f.png)
+
+Perhaps: 
+
+```
+servirtium.recorderMuutations().callerRequest().addReplacement(fromRegex, To)
+servirtium.recorderMuutations().callerRequest().addHeaderRemoved(headerToRemove)
+```
+
+Or 
+
+```
+servirtium.mutations().addReplacement(RECORDING_CALLER_REQUEST, fromRegex, To)
+servirtium.mutations().addHeaderRemoved(RECORDING_CALLER_REQUEST, headerToRemove)
+```
+
+### Mutation of Real Response
+
+![image](https://user-images.githubusercontent.com/82182/91492667-ed831b00-e8ad-11ea-9de1-34bce1e12ae7.png)
+
+Perhaps: 
+
+```
+servirtium.recorderMuutations().realResponse().addReplacement(fromRegex, To)
+servirtium.recorderMuutations().realResponse().addHeaderRemoved(headerToRemove)
+```
+
+Or 
+
+```
+servirtium.mutations().addReplacement(RECORDING_REAL_RESPONSE, fromRegex, To)
+servirtium.mutations().addHeaderRemoved(RECORDING_REAL_RESPONSE, headerToRemove)
+```
