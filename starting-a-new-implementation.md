@@ -14,19 +14,19 @@ even about Servirtium at all.
 
 Steps:
 
-1. [Write a simple API class with tests](./starting-a-new-implementation-step-1.md)
-2. [Implement a rudimentary "playback" for the same test cases](./starting-a-new-implementation-step-2.md)
-3. [Adding "record" mode to what you have](./starting-a-new-implementation-step-3.md)
-4. [Make the recording of a test fail if it is different to what it was previously](./starting-a-new-implementation-step-4.md)
-5. [Add second and subsequent interaction handling](./starting-a-new-implementation-step-5.md)
-6. [Extract the library from the climate demo, to its own repo](./starting-a-new-implementation-step-6.md)
-7. [Other HTTP verbs other than 'GET'](./starting-a-new-implementation-step-7.md)
-8. [Redaction, Mask, Delete, and Mutate operations](./starting-a-new-implementation-step-8.md)
-9. [Add a capability for a "Note"](./starting-a-new-implementation-step-9.md)
-10. [Fail a playback step if the request is not as previously recorded](./starting-a-new-implementation-step-10.md)
-11. [Optional Markdown Settings](./starting-a-new-implementation-step-11.md)
-12. [Publish to package/module-land for your language family](./starting-a-new-implementation-step-12.md)
-13. [Proxy Server mode of operation](./starting-a-new-implementation-step-13.md)
+1. [Write a simple API class with tests](starting-a-new-impl-step-1.md)
+2. [Implement a rudimentary "playback" for the same test cases](starting-a-new-impl-step-2.md)
+3. [Adding "record" mode to what you have](starting-a-new-impl-step-3.md)
+4. [Make the recording of a test fail if it is different to what it was previously](starting-a-new-impl-step-4.md)
+5. [Add second and subsequent interaction handling](starting-a-new-impl-step-5.md)
+6. [Extract the library from the climate demo, to its own repo](starting-a-new-impl-step-6.md)
+7. [Other HTTP verbs other than 'GET'](starting-a-new-impl-step-7.md)
+8. [Redaction, Mask, Delete, and Mutate operations](starting-a-new-impl-step-8.md)
+9. [Add a capability for a "Note"](starting-a-new-impl-step-9.md)
+10. [Fail a playback step if the request is not as previously recorded](starting-a-new-impl-step-10.md)
+11. [Optional Markdown Settings](starting-a-new-impl-step-11.md)
+12. [Publish to package/module-land for your language family](starting-a-new-impl-step-12.md)
+13. [Proxy Server mode of operation](starting-a-new-impl-step-13.md)
 
 # Notes on prior implementations
 
