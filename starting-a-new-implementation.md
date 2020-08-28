@@ -21,7 +21,7 @@ Steps:
 5. [Add second and subsequent interaction handling](starting-a-new-impl-step-5.md)
 6. [Extract the library from the climate demo, to its own repo](starting-a-new-impl-step-6.md)
 7. [Other HTTP verbs other than 'GET'](starting-a-new-impl-step-7.md)
-8. [Redaction, Mask, Delete, and Mutate operations](starting-a-new-impl-step-8.md)
+8. [Mutation operations (Redaction, Mask, Delete)](starting-a-new-impl-step-8.md)
 9. [Add a capability for a "Note"](starting-a-new-impl-step-9.md)
 10. [Fail a playback step if the request is not as previously recorded](starting-a-new-impl-step-10.md)
 11. [Optional Markdown Settings](starting-a-new-impl-step-11.md)

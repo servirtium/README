@@ -1,4 +1,4 @@
-# Step 8. Redaction, Mask, Delete, and Mutate operations
+# Step 8. Mutation operations (Redaction, Mask, Delete)
 
 Sometimes things have to be changed in request headers and/or request body that is saved as markdown in a recording
 Similarly things may have to be changed in response headers and/or response body.  
