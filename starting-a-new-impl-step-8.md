@@ -31,11 +31,22 @@ servirtium.recorderMutations().callerRequest().addReplacement(fromRegex, To)
 servirtium.recorderMutations().callerRequest().addHeaderRemoval(headerNameRegex)
 ```
 
-Or 
+Or:
 
 ```
 servirtium.mutations().addReplacement(RECORDING_CALLER_REQUEST, fromRegex, To)
 servirtium.mutations().addHeaderRemoval(RECORDING_CALLER_REQUEST, headerNameRegex)
+```
+
+Maybe: 
+
+```
+servirtium.recorder(
+   callerRequest( 
+     addReplacement(fromRegex, To)
+     addHeaderRemoval(headerNameRegex)
+   )
+)
 ```
 
 ### Recorder: Mutation of Real Response
@@ -49,12 +60,24 @@ servirtium.recorderMutations().realResponse().addReplacement(fromRegex, To)
 servirtium.recorderMutations().realResponse().addHeaderRemoval(headerNameRegex)
 ```
 
-Or 
+Or:
 
 ```
 servirtium.mutations().addReplacement(REAL_RESPONSE, fromRegex, To)
 servirtium.mutations().addHeaderRemoval(REAL_RESPONSE, headerNameRegex)
 ```
+
+Maybe: 
+
+```
+servirtium.recorder(
+   realResponse( 
+     addReplacement(fromRegex, To)
+     addHeaderRemoval(headerNameRegex)
+   )
+)
+```
+
 
 ### Recorder: Further Mutation of Caller Request For Recording
 
@@ -69,12 +92,24 @@ servirtium.recorderMutations().recordedRequest().addReplacement(fromRegex, To)
 servirtium.recorderMutations().recordedRequest().addHeaderRemoval(headerNameRegex)
 ```
 
-Or 
+Or: 
 
 ```
 servirtium.mutations().addReplacement(RECORDED_REQUEST, fromRegex, To)
 servirtium.mutations().addHeaderRemoval(RECORDED_REQUEST, headerNameRegex)
 ```
+
+Maybe: 
+
+```
+servirtium.recorder(
+   recordedRequest( 
+     addReplacement(fromRegex, To)
+     addHeaderRemoval(headerNameRegex)
+   )
+)
+```
+
 
 ### Recorder: Further Mutation of Real Response For Caller
 
@@ -92,12 +127,24 @@ servirtium.recorderMutations().callerResponse().addReplacement(fromRegex, To)
 servirtium.recorderMutations().callerResponse().addHeaderRemoval(headerNameRegex)
 ```
 
-Or 
+Or: 
 
 ```
 servirtium.mutations().addReplacement(RECORDING_CALLER_RESPONSE, fromRegex, To)
 servirtium.mutations().addHeaderRemoval(RECORDING_CALLER_RESPONSE, headerNameRegex)
 ```
+
+Maybe: 
+
+```
+servirtium.recorder(
+   callerResponse( 
+     addReplacement(fromRegex, To)
+     addHeaderRemoval(headerNameRegex)
+   )
+)
+```
+
 
 ### Playback: Mutation of Caller Request
 
@@ -110,12 +157,24 @@ servirtium.playbackMutations().callerRequest().addReplacement(fromRegex, To)
 servirtium.playbackMutations().callerRequest().addHeaderRemoval(headerNameRegex)
 ```
 
-Or 
+Or: 
 
 ```
 servirtium.mutations().addReplacement(PLAYBACK_CALLER_REQUEST, fromRegex, To)
 servirtium.mutations().addHeaderRemoval(PLAYBACK_CALLER_REQUEST, headerNameRegex)
 ```
+
+Maybe: 
+
+```
+servirtium.playback(
+   callerRequest( 
+     addReplacement(fromRegex, To)
+     addHeaderRemoval(headerNameRegex)
+   )
+)
+```
+
 
 ### Playback: Further Mutation of Real Response For Caller
 
@@ -133,9 +192,20 @@ servirtium.playbackMutations().callerResponse().addReplacement(fromRegex, To)
 servirtium.playbackMutations().callerResponse().addHeaderRemoval(headerNameRegex)
 ```
 
-Or 
+Or: 
 
 ```
 servirtium.mutations().addReplacement(PLAYBACK_CALLER_RESPONSE, fromRegex, To)
 servirtium.mutations().addHeaderRemoval(PLAYBACK_CALLER_RESPONSE, headerNameRegex)
+```
+
+Maybe: 
+
+```
+servirtium.playback(
+   callerResponse( 
+     addReplacement(fromRegex, To)
+     addHeaderRemoval(headerNameRegex)
+   )
+)
 ```
