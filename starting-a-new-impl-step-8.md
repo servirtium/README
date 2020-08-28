@@ -18,11 +18,11 @@ You'll also note that some of the same Redaction, Mask, Delete, and Mutate opera
 
 ## Diagram of components/services
 
-![image](https://user-images.githubusercontent.com/82182/91492094-ed365000-e8ac-11ea-908b-41908bded2a6.png)
+![image](https://user-images.githubusercontent.com/82182/91542257-741f1300-e915-11ea-9e25-13ebe633e2ba.png)
 
 ### Recorder: Mutation of Caller Request
 
-![image](https://user-images.githubusercontent.com/82182/91492226-34244580-e8ad-11ea-8377-6273b112194f.png)
+![image](https://user-images.githubusercontent.com/82182/91541961-01159c80-e915-11ea-80ba-1872b61c57e0.png)
 
 Perhaps: 
 
@@ -51,7 +51,7 @@ servirtium.recorder(
 
 ### Recorder: Mutation of Real Response
 
-![image](https://user-images.githubusercontent.com/82182/91492667-ed831b00-e8ad-11ea-9de1-34bce1e12ae7.png)
+![image](https://user-images.githubusercontent.com/82182/91542012-17bbf380-e915-11ea-95a8-7237c971b0f9.png)
 
 Perhaps: 
 
@@ -83,7 +83,7 @@ servirtium.recorder(
 
 While the "real" needed real passwords and user IDs to function, playback does not ad we should never share secrets - not even for pre-prod infrastructure. So "Authorization: <real details>" could be replaced with "Authorization: DUMMY_AUTH" and devs who value playback only don't care that the authorization is dummy for some functional interaction.
 
-![image](https://user-images.githubusercontent.com/82182/91493326-0e983b80-e8af-11ea-8cbc-91f959cc2d4f.png)
+![image](https://user-images.githubusercontent.com/82182/91542052-27d3d300-e915-11ea-85e2-ee5bd73c5be7.png)
 
 Perhaps: 
 
@@ -118,7 +118,7 @@ This would be used to turn:
 * `Date: DUMMY_day-name,day_month_year_hour:minute:secon_TZ` back into `Date: Wed, 21 Oct 2015 07:28:00 GMT` for the caller (if needed).
 * `realdomain.com` back into `localhost:61417` for the caller (most web-APIs don't put long URLs in response bodies, but WorldBank's climate API does).
 
-![image](https://user-images.githubusercontent.com/82182/91523234-1a5a2100-e8f4-11ea-87d0-ea56cc41beb4.png)
+![image](https://user-images.githubusercontent.com/82182/91542121-40dc8400-e915-11ea-9c23-09a6fe1a8dee.png)
 
 Perhaps: 
 
@@ -148,7 +148,7 @@ servirtium.recorder(
 
 ### Playback: Mutation of Caller Request
 
-![image](https://user-images.githubusercontent.com/82182/91523627-272b4480-e8f5-11ea-8c4b-f93eca7a5817.png)
+![image](https://user-images.githubusercontent.com/82182/91542175-5487ea80-e915-11ea-9fec-47ceafeef07b.png)
 
 Perhaps: 
 
@@ -183,7 +183,7 @@ This would be used to turn:
 * `Date: DUMMY_day-name,day_month_year_hour:minute:secon_TZ` back into `Date: Wed, 21 Oct 2015 07:28:00 GMT` for the caller (if needed).
 * `realdomain.com` back into `localhost:61417` for the caller (most web-APIs don't put long URLs in response bodies, but WorldBank's climate API does).
 
-![image](https://user-images.githubusercontent.com/82182/91524140-65753380-e8f6-11ea-9392-6cdc6ad00e37.png)
+![image](https://user-images.githubusercontent.com/82182/91542218-65d0f700-e915-11ea-8bb4-d5e3dd953867.png)
 
 Perhaps: 
 
