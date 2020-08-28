@@ -20,7 +20,7 @@ You'll also note that some of the same Redaction, Mask, Delete, and Mutate opera
 
 ![image](https://user-images.githubusercontent.com/82182/91542257-741f1300-e915-11ea-9e25-13ebe633e2ba.png)
 
-### Recorder: Mutation of Caller Request
+### 8.1 Recorder: Mutation of Caller Request
 
 ![image](https://user-images.githubusercontent.com/82182/91541961-01159c80-e915-11ea-80ba-1872b61c57e0.png)
 
@@ -49,7 +49,7 @@ servirtium.recorder(
 )
 ```
 
-### Recorder: Mutation of Real Response
+### 8.2 Recorder: Mutation of Real Response
 
 ![image](https://user-images.githubusercontent.com/82182/91542012-17bbf380-e915-11ea-95a8-7237c971b0f9.png)
 
@@ -79,7 +79,7 @@ servirtium.recorder(
 ```
 
 
-### Recorder: Further Mutation of Caller Request For Recording
+### 8.3 Recorder: Further Mutation of Caller Request For Recording
 
 While the "real" needed real passwords and user IDs to function, playback does not ad we should never share secrets - not even for pre-prod infrastructure. So "Authorization: <real details>" could be replaced with "Authorization: DUMMY_AUTH" and devs who value playback only don't care that the authorization is dummy for some functional interaction.
 
@@ -111,7 +111,7 @@ servirtium.recorder(
 ```
 
 
-### Recorder: Further Mutation of Real Response For Caller
+### 8.4 Recorder: Further Mutation of Real Response For Caller
 
 This would be used to turn:
 
@@ -146,7 +146,7 @@ servirtium.recorder(
 ```
 
 
-### Playback: Mutation of Caller Request
+### 8.5 Playback: Mutation of Caller Request
 
 ![image](https://user-images.githubusercontent.com/82182/91542175-5487ea80-e915-11ea-9fec-47ceafeef07b.png)
 
@@ -176,7 +176,7 @@ servirtium.playback(
 ```
 
 
-### Playback: Further Mutation of Real Response For Caller
+### 8.6 Playback: Further Mutation of Real Response For Caller
 
 This would be used to turn:
 
@@ -209,3 +209,36 @@ servirtium.playback(
    )
 )
 ```
+
+## Applicability to WorldBank's climate web-API
+
+### 8.1 Recorder: Mutation of Caller Request
+
+As a man-in-the-middle, Servirtium will receive GETs, POSTs and more with localhost:61417 and http://localhost:61417 in the headers and bodies of REQUESTS. The read web-API (http://climatedataapi.worldbank.org - port 80) can't have "localhost" going up to it at all.
+
+Thus:
+
+* All references to http://localhost:61417 in request bodies need to be changed to http://climatedataapi.worldbank.org
+* A reference to localhost:61417 in the "host" request header needs to be changed to climatedataapi.worldbank.org
+
+### 8.2 Recorder: Mutation of Real Response
+
+Most likely there are no mutations needed to the REAL response before it is saved as markdown (for future playback)
+
+### 8.3 Recorder: Further Mutation of Caller Request For Recording
+
+Most likely there are no mutations needed to the REAL response before it is saved as markdown (for future playback)
+
+### 8.4 Recorder: Further Mutation of Real Response For Caller
+
+* All references to http://climatedataapi.worldbank.org in response bodies need to be changed to http://localhost:61417 before replying to the caller.
+* A reference to localhost:61417 in the "location" response header needs to be changed to climatedataapi.worldbank.org without changing the rest of the URL.
+
+### 8.5 Playback: Mutation of Caller Request
+
+As 8.1, but it isn't always going to be the case, so 8.1 and 8.5 need to be handled separately.
+
+### 8.6 Playback: Further Mutation of Real Response For Caller
+
+As 8.2, but it isn't always going to be the case, so 8.2 and 8.6 need to be handled separately.
+
