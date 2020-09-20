@@ -12,7 +12,7 @@ This is the suggested way of building Servirtium for a new language as it is met
 have to pause your development of this and restart later. So we're going to this in many small steps. The first isn't 
 even about Servirtium at all.
 
-Steps:
+**Steps:**
 
 1. [Write a simple API class with tests](starting-a-new-impl-step-1.md)
 2. [Implement a rudimentary "playback" for the same test cases](starting-a-new-impl-step-2.md)
@@ -27,6 +27,7 @@ Steps:
 11. [Optional Markdown Settings](starting-a-new-impl-step-11.md)
 12. [Publish to package/module-land for your language family](starting-a-new-impl-step-12.md)
 13. [Proxy Server mode of operation](starting-a-new-impl-step-13.md)
+14. [Pass the compatibility kit](starting-a-new-impl-step-14.md)
 
 # Notes on prior implementations
 
