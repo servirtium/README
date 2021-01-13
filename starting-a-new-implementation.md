@@ -27,7 +27,7 @@ even about Servirtium at all.
 11. [Optional Markdown Settings](starting-a-new-impl-step-11.md)
 12. [Publish to package/module-land for your language family](starting-a-new-impl-step-12.md)
 13. [Proxy Server mode of operation](starting-a-new-impl-step-13.md)
-14. [Pass the compatibility kit](starting-a-new-impl-step-14.md)
+14. [Pass the compatibility suite](starting-a-new-impl-step-14.md)
 
 # Notes on prior implementations
 

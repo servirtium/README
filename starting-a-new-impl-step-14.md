@@ -1,4 +1,6 @@
-# Step 13. Pass the compatibility kit
+# Step 14. Pass the compatibility suite
+
+This is a more convoluted setup of Selenium and web-app that contains a Mocha test suite. The test suite pre-existed the creation of Servirtium, but serves us well for a larger confirmation of the compatibility of an implementation of Servirtium.
 
 Copy https://github.com/servirtium/servirtium-javascript/blob/master/compatibility-suite.py into your implementation repo.
 
