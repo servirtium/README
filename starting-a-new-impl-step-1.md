@@ -21,7 +21,9 @@ test_averageRainfallForMiddleEarthFrom1980to1999DoesNotExist()
     ... causes "bad country code"
 ```
 
-And the URLs you're trying to hit is `http://climatedataapi.worldbank.org/climateweb/rest/v1/country/annualavg/pr/{fromCCYY}/{toCCYY}/{countryISO}.xml`. 
+And the URLs you're trying to hit is 
+`https://servirtium.github.io/worldbank-climate-recordings/climateweb/rest/v1/country/annualavg/pr/{fromCCYY}/{toCCYY}/{countryISO}.xml`. 
+Which is a recording of `http://climatedataapi.worldbank.org/climateweb/rest/v1/country/annualavg/pr/{fromCCYY}/{toCCYY}/{countryISO}.xml`
 
 Note that there is nothing of "Servirtium" in this step - this is just creation of a test harness 
 in your language's preferred test runner (and following best practices including separation of 
