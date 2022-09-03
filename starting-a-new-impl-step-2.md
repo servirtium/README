@@ -16,9 +16,11 @@ some multi-threaded or async capability to allow a test suite to issue GETs thro
 <img src="https://raw.github.com/servirtium/README/master/2.svg?sanitize=true">
 
 Notes:
-1. The server you're standing up should not have an SSL certificate or speak over HTTPS. 
+1. The server you're standing up should not have an SSL certificate or speak over HTTPS. It would be localhost:61471 by convention, but you could specify servirtium.local.gd:61471 if you wanted for additional clarity (Read about [local.gd](http://local.gd))
 
 2. In the event of Servirtium issuing errors/exceptions during interactions, your fledgling Servirtium should provide a mechanism for the test runner to find out what failed in the last interaction. Depending on what is idiomatic for the test runner/language that could be in a try/catch block or a "tear down" or "after". Either way it should be programatic. 
+
+
 
 ## Diagram of components/services
 
