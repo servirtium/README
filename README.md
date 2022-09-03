@@ -26,7 +26,7 @@ Another video captures a day that service was flaky (2.5 mins):
 
 # Language Implementations in the Servirtium organization
 
-1. Java - [Servirtium-Java](https://github.com/servirtium/servirtium-java) (in this org) - ready to use
+1. Java - [Servirtium-Java](https://github.com/servirtium/servirtium-java) (in this org) - ready to use, but the Kotlin one below is better
 2. Python - [Servirtium-Python](https://github.com/servirtium/servirtium-python) - alpha quality (help needed)
 3. Ruby - [Servirtium-Ruby](https://github.com/servirtium/servirtium-ruby) - nearly complete
 4. Go - People wishing to lead development sought.
@@ -37,7 +37,7 @@ If you want to start one of these then read [starting a new implementation](star
 
 # Language Implementations elsewhere
 
-1. Kotlin - [HTTP4's Servirtium lib](https://www.http4k.org/guide/modules/servicevirtualisation/) (external) - ready to use. Impl uses Http4K, but works fine for usages that otherwise don't utilize Http4K.
+1. Kotlin - [HTTP4's Servirtium lib](https://www.http4k.org/guide/reference/servicevirtualisation/) (external) - ready to use. Impl uses Http4K, but works fine for usages that otherwise don't utilize Http4K.
 
 We're also looking to existing *Service Virtualization* frameworks/libs to support (and help refine) the same Markdown format.
 
