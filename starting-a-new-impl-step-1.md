@@ -27,9 +27,7 @@ Which is a recording of `http://climatedataapi.worldbank.org/climateweb/rest/v1/
 
 Endpoints we use: [/climateweb/rest/v1/country/annualavg/pr/1980/1999/egy.xml](https://servirtium.github.io/worldbank-climate-recordings/climateweb/rest/v1/country/annualavg/pr/1980/1999/egy.xml), [/climateweb/rest/v1/country/annualavg/pr/1980/1999/fra.xml](https://servirtium.github.io/worldbank-climate-recordings/climateweb/rest/v1/country/annualavg/pr/1980/1999/fra.xml), [/climateweb/rest/v1/country/annualavg/pr/1980/1999/gbr.xml](https://servirtium.github.io/worldbank-climate-recordings/climateweb/rest/v1/country/annualavg/pr/1980/1999/gbr.xml), [/climateweb/rest/v1/country/annualavg/pr/1980/1999/mde.xml](https://servirtium.github.io/worldbank-climate-recordings/climateweb/rest/v1/country/annualavg/pr/1980/1999/mde.xml), [/climateweb/rest/v1/country/annualavg/pr/1985/1995/gbr.xml](https://servirtium.github.io/worldbank-climate-recordings/climateweb/rest/v1/country/annualavg/pr/1985/1995/gbr.xml)
 
-Note that there is nothing of **Servirtium** in this step - this is just creation of a "test harness" 
-in your language's preferred test runner (and following best practices including separation of 
-prod code and test code, and a build script if necessary).
+Note that there is nothing of **Servirtium** in this initial step - this is just creation of a "test harness" in your language's preferred test runner (and following best practices including separation of prod code and test code, and a build script if necessary).
 
 <img src="https://raw.github.com/servirtium/README/master/1.svg?sanitize=true">
 

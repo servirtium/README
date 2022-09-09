@@ -2,15 +2,12 @@ Main Servirtium site: https://servirtium.dev
 
 # General Architecture
 
-You're going to need a `Recorder` (to the markdown format), a `replayer` (from the markdown format), a `server` that can listen on a 
-socket and work with the recorder or replayer. In the case of the recorder ("man in the middle"), the incoming requests are sent to the 'real' service too. 
+You're going to need a `Recorder` (to the markdown format), a `replayer` (from the markdown format), a `server` that can listen on a socket and work with the recorder or replayer. In the case of the recorder ("man in the middle"), the incoming requests are sent to the 'real' service too. 
 In the case of the replayer, the "real service" is not involved.  
 
 # How to start new language implementation
 
-This is the suggested way of building Servirtium for a new language as it is methodical. That's useful because you may 
-have to pause your development of this and restart later. So we're going to this in many small steps. The first isn't 
-even about Servirtium at all.
+This is the suggested way of building Servirtium for a new language as it is methodical. That's useful because you may have to pause your development of this and restart later. So we're going to this in many small steps. The first isn't even about Servirtium at all.  Methodical is the idea here.
 
 **Steps:**
 
@@ -34,5 +31,3 @@ even about Servirtium at all.
 If you're making a new impl, you don't actually have to understand the architecture of previous implementations. Indeed, your impl may be better for **not** being educated on prior implementations.
 
 * [Java using Netty, Undertow and OKHttp libraries](java-version-architecture.md)
-
-* 

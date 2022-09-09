@@ -1,12 +1,8 @@
 # Step 8. Mutation operations (Redaction, Mask, Delete)
 
-Sometimes things have to be changed in request headers and/or request body that is saved as markdown in a recording
-Similarly things may have to be changed in response headers and/or response body.  
+Sometimes things have to be changed in request headers and/or request body that is saved as markdown in a recording. Similarly, things may have to be changed in response headers and/or response body.  
 
-Related things that were recorded in a certain way, may have to be changed again in playback. You might have morphed 
-`Date: Wed, 21 Oct 2019 07:28:00 GMT` to `Date: todays's-date-paul-was-here` for the purposes of the recording, but
-in playback it needs to be changed again from `Date: todays's-date-paul-was-here` to `Date: Sun, 9 Feb 2020 11:18:03 GMT` 
-so that tests still pass.
+Related things that were recorded in a certain way, may have to be changed again in playback. You might have morphed `Date: Wed, 21 Oct 2019 07:28:00 GMT` to `Date: todays's-date-paul-was-here` for the purposes of the recording, but in playback it needs to be changed again from `Date: todays's-date-paul-was-here` to `Date: Sun, 9 Feb 2020 11:18:03 GMT` so that tests still pass.
 
 Then there's also removal of headers (and parts of a body) at both request and response level, that's needed.
 
@@ -214,7 +210,7 @@ servirtium.playback(
 
 ### 8.1 Recorder: Mutation of Caller Request
 
-As a man-in-the-middle, Servirtium will receive GETs, POSTs and more with localhost:61417 and http://localhost:61417 in the headers and bodies of REQUESTS. The read web-API (http://climatedataapi.worldbank.org - port 80) can't have "localhost" going up to it at all.
+As middleware, Servirtium will receive GETs, POSTs and more with localhost:61417 and http://localhost:61417 in the headers and bodies of REQUESTS. The read web-API (http://climatedataapi.worldbank.org - port 80) can't have "localhost" going up to it at all.
 
 Thus:
 

@@ -34,7 +34,13 @@ python3 compatibility-suite.py playback
 
 This doesn't need the real backend of course, it uses the recordings from the above.
 
+# README changes
+
+The readme for the demo needs to have explicit command-line advice about how to run the three modes separately. Ways of doing the same in IDES (Visual Studio Code, JetBrains products) are secondary, but may also be in the README.
+
 # Confirming the correctness of everything
+
+TODO - review this -ph
 
 We have some sed/awk that attempts to neutralize the inconsequential differences in each recording ...
 

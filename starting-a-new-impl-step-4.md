@@ -1,6 +1,6 @@
 # Step 4. Make the recording of a test fail if it is different to what it was previously.
 
-Store the whole recording previously made for each test. When the test completes, check if the whole recording is different and **fail the test** if it is. Just do this in memory and as each test executes. 
+Store the whole recording previously made for each test. When the test completes, check if the whole recording is different from what it was before. If it is **the test should deliberately fail**. Just do this in memory and as each test executes. 
 
 ```
 test:  
