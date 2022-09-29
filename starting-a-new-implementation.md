@@ -7,7 +7,9 @@ In the case of the replayer, the "real service" is not involved.
 
 # How to start new language implementation
 
-This is the suggested way of building Servirtium for a new language as it is methodical. That's useful because you may have to pause your development of this and restart later. So we're going to this in many small steps. The first isn't even about Servirtium at all.  Methodical is the idea here.
+This is the suggested way of building Servirtium for a new language as it is methodical. That's useful because you may have to pause your development of this and restart later. So we're going to this in many small steps. The first isn't even about Servirtium at all.  
+
+Methodical is the idea here.  This is all pausable/resumable as an activity. Indeed Fred and Wilma can pair on step 1, get busy on other important things, then Betty and Barney can pick up step 2 (from what was checked in) and continue.
 
 **Steps:**
 
