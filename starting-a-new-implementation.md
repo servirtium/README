@@ -32,4 +32,4 @@ Methodical is the idea here.  This is all pausable/resumable as an activity. Ind
 
 If you're making a new impl, you don't actually have to understand the architecture of previous implementations. Indeed, your impl may be better for **not** being educated on prior implementations.
 
-* [Java using Netty, Undertow and OKHttp libraries](java-version-architecture.md)
+* Here's the [Kotlin API of step 1](https://github.com/http4k/servirtium-demo-kotlin-climate-tck/blob/master/src/main/kotlin/servirtium/http4k/ClimateApi.kt), and the JUnit5 [tests for that](https://github.com/http4k/servirtium-demo-kotlin-climate-tck/blob/master/src/test/kotlin/servirtium/http4k/kotlin/ClimateApiTests.kt). 
