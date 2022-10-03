@@ -11,7 +11,7 @@ and "record" modes of operation.  You should think about the right way of comman
 to the right test or tests too, as IDE operation for a single test is not enough.
 
 Success is where the recording doesn't change regardless of how many times you run the tests 
-(overwriting the .md files in tests/mocks/ (or whatever you have as that directory in Git)
+(overwriting the .md files in tests/mocks/ (or whatever you have as that directory in Git). Close enough for now is OK. Most likely you will solve this perfectly in step #8
 
 Note that Servirtium's recording server is a deliberate middleware - meaning that the 
 climate-lib needs to invoke services on http://localhost:61417/climateweb/rest/v1/ (or http://servirtium.local.gd:61417 for additional clarity)
