@@ -8,16 +8,17 @@ See [TestRecordingClimateApi.py](https://github.com/servirtium/demo-python-clima
 
 To be clear, the same tests have now the ability to pass in "direct" (no Servirtium), "playback", 
 and "record" modes of operation.  You should think about the right way of command-line subsetting 
-to the same class, as IDE operation for a single test is not enough.
+to the right test or tests too, as IDE operation for a single test is not enough.
 
 Success is where the recording doesn't change regardless of how many times you run the tests 
 (overwriting the .md files in tests/mocks/ (or whatever you have as that directory in Git)
 
 Note that Servirtium's recording server is a deliberate middleware - meaning that the 
 climate-lib needs to invoke services on http://localhost:61417/climateweb/rest/v1/ (or http://servirtium.local.gd:61417 for additional clarity)
-instead of ~~http://climatedataapi.worldbank.org/climateweb/rest/v1/~~ https://servirtium.github.io/worldbank-climate-recordings/climateweb/rest/v1/. Specifically, the climate API test-harness 
-needs to be configurable to choose the base domain name / port. A constructor arg is a good way to specify that, 
+instead of ~~http://climatedataapi.worldbank.org/climateweb/rest/v1/~~ https://servirtium.github.io/worldbank-climate-recordings/climateweb/rest/v1/. Specifically, the climate API test-harness needs to be configurable to choose the base domain name / port. A constructor arg is a good way to specify that, 
 but language idioms differ. 
+
+Each record step is repeated/proxied to the real service. If the repeated/proxied IO fails, then a mechanism for recording the last error should be utilized and the fact that Servirtium has encountered an error itself should be communicated back to the caller with HTTP status code 500.  "After Test" logic in the caller should query the "last error" property of Servirtium to be able to correlate root causes with the failing test. The Playback handler (not middleware) should probably utilize the same "last error" facility.
 
 <img src="https://raw.github.com/servirtium/README/master/3.svg?sanitize=true">
 
