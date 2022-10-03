@@ -18,6 +18,8 @@ climate-lib needs to invoke services on http://localhost:61417/climateweb/rest/v
 instead of ~~http://climatedataapi.worldbank.org/climateweb/rest/v1/~~ https://servirtium.github.io/worldbank-climate-recordings/climateweb/rest/v1/. Specifically, the climate API test-harness needs to be configurable to choose the base domain name / port. A constructor arg is a good way to specify that, 
 but language idioms differ. 
 
+You will notice that the weather api XML documents statically hosted on GitHub-Pages are server as gzipped XML. You recording implementation should be able to recognize gzip: not gzipped in the recording, but re-gzipped for the calling test suite.
+
 Each record step is repeated/proxied to the real service. If the repeated/proxied IO fails, then a mechanism for recording the last error should be utilized and the fact that Servirtium has encountered an error itself should be communicated back to the caller with HTTP status code 500.  "After Test" logic in the caller should query the "last error" property of Servirtium to be able to correlate root causes with the failing test. The Playback handler (not middleware) should probably utilize the same "last error" facility.
 
 <img src="https://raw.github.com/servirtium/README/master/3.svg?sanitize=true">
