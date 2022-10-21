@@ -27,6 +27,7 @@ Methodical is the idea here.  This is all pausable/resumable as an activity. Ind
 12. [Publish to package/module-land for your language family](starting-a-new-impl-step-12.md)
 13. [Proxy Server mode of operation](starting-a-new-impl-step-13.md)
 14. [Pass the compatibility suite](starting-a-new-impl-step-14.md)
+15. [Ensure compatibility with other language implentations](starting-a-new-impl-step-15.md)
 
 # Notes on prior implementations
 
