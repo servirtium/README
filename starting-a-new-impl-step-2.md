@@ -6,6 +6,8 @@ A playback Servirtium (in the test-base) should be able to respond as the WorldB
 
 See [see TestPlaybackClimateApi.py](https://github.com/servirtium/demo-python-climate-tck/blob/master/src/test/TestPlaybackClimateApi.py) and the mocks that it uses for playback [in here](https://github.com/servirtium/demo-python-climate-tck/tree/master/src/mocks). The content of mocks for the Python version should be the same as the content for the Java version, even if the file names/paths are slightly different. Those mocks are checked into source-control alongside the tests, without being modified.
 
+Parsing of the markdown files **is easy**. Uses your language's regex. A markdown file has a series of interactions. They are separated like so "\n## Interaction ". Within each interactiion there are four sections separated like so "\n### ". Within each of those there is a code block with "\n```\n". It's just a job of nesting some for looks to turn the markdown into something that programatic use during replay. 
+
 To be clear, the same five tests you already have the ability to pass in "direct" (no Servirtium) **and** "playback" modes of operation. And these two sets of five **should** share code as much as possible (code reuse, test inheritance or composition - are both good). Ten tests in all.
 
 Note too, that in order to stay "in process" with this step you're going to have to leverage 
