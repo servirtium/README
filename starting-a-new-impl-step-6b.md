@@ -7,6 +7,6 @@ This is for the implementation repo not the demo/tck one
 This recording https://raw.githubusercontent.com/servirtium/README/master/broken_recordings/request_body_that_never_happened 
 claims to be a recording of https://www.example.com/ but it is not.  Your test should fail because there were unexpected headers in the request.
 
-You are going to remove everything from request headers apart from:
+You are going to remove everything from request headers apart from: `content-type`. Your test will not remove or redact ``
 
 
