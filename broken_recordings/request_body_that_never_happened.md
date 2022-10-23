@@ -9,7 +9,7 @@
 ### Request body recorded for playback ():
 
 ```
-should fail here as no server ever received this body
+should fail here as no server ever received this request body
 ```
 
 ### Response headers recorded for playback:
