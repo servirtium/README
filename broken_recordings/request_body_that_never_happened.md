@@ -1,4 +1,4 @@
-## Interaction 0: GET /test
+## Interaction 0: GET /
 
 ### Request headers recorded for playback:
 
