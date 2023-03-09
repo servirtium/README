@@ -1,4 +1,4 @@
-## Have a raw-serve (GET) capability for static content
+## Have a raw serve (GET) capability for static content
 
 Servierium should be able to mark a specific directory as sttic content and not record it at all (or play it back)
 
