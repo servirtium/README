@@ -23,11 +23,12 @@ Methodical is the idea here.  This is all pausable/resumable as an activity. Ind
 8. [Mutation operations (Redaction, Mask, Delete)](starting-a-new-impl-step-8.md)
 9. [Add a capability for a "Note"](starting-a-new-impl-step-9.md)
 10. [Fail a playback step if the request is not as previously recorded](starting-a-new-impl-step-10.md)
-11. [Optional Markdown Settings](starting-a-new-impl-step-11.md)
-12. [Publish to package/module-land for your language family](starting-a-new-impl-step-12.md)
-13. [Proxy Server mode of operation](starting-a-new-impl-step-13.md)
-14. [Pass the compatibility suite](starting-a-new-impl-step-14.md)
-15. [Ensure compatibility with other language implentations](starting-a-new-impl-step-15.md)
+11. [Have a raw-serve (GET) capability for static content](starting-a-new-impl-step-11.md))
+12. [Optional Markdown Settings](starting-a-new-impl-step-12.md)
+13. [Publish to package/module-land for your language family](starting-a-new-impl-step-13.md)
+14. [Proxy Server mode of operation](starting-a-new-impl-step-14.md)
+15. [Pass the compatibility suite](starting-a-new-impl-step-15.md)
+16. [Ensure compatibility with other language implentations](starting-a-new-impl-step-16.md)
 
 # Notes on prior implementations
 
